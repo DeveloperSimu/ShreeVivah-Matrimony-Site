@@ -1,0 +1,42 @@
+@import url("../../responsive.css");
+
+.search-results {
+  width: min(100% - 40px, 1100px);
+  margin: 40px auto;
+  padding: 28px;
+  border-radius: 18px;
+  background: #f5f7fb;
+  color: #1f2a44;
+  box-shadow: 0 12px 36px rgba(20, 20, 40, 0.16);
+}
+
+.search-results h2 {
+  margin-bottom: 22px;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.profile-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 20px;
+}
+
+.search-results .profile-card {
+  min-width: 0;
+  padding: 18px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(20, 20, 40, 0.12);
+}
+
+.search-results .profile-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.search-results .profile-card a {
+  display: inline-block;
+  margin-top: 10px;
+}

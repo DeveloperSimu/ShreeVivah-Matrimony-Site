@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ishita Singh - Full Profile</title>
+    <link rel="stylesheet" href="{% static 'profiles/css/user.css' %}?v=2" />
+</head>
+
+<body>
+  {% include "main/navbar.html" %}
+    <div class="profile-container">
+        <div class="profile-card">
+                  <!-- 🔙 Back Button -->
+        <div class="back-btn" onclick="history.back()">Back</div>
+            <div class="profile-image">
+                <img src="{% static 'profiles/images/Ishita.jpeg' %}" alt="Ishita Singh" />
+            </div>
+            <div class="profile-details">
+                <h1>Ishita Singh</h1>
+                <p><strong>Profession:</strong> Classical Dancer</p>
+                <p><strong>Location:</strong> Chennai, India</p>
+                <p><strong>About Myself:</strong> I enjoy cooking, yoga, and preserving classical dance traditions.</p>
+                <p><strong>Expectations:</strong> Looking for a partner who appreciates arts and a healthy lifestyle.</p>
+                <p><strong>Family Details:</strong> Supportive family with traditional values. Parents are educators.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+  {% include "main/footer.html" %}
+</body>
+
+</html>

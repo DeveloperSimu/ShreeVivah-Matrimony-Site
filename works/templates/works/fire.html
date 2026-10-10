@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore the meaning and moments of the sacred wedding fire ceremony with ShreeVivah.">
+    <title>Sacred Fire Ceremony | ShreeVivah</title>
+    <link rel="stylesheet" href="{% static 'works/css/fire.css' %}">
+</head>
+<body>
+    {% include "main/navbar.html" %}
+
+    <main>
+        <header class="sacred-hero">
+            <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+                <source src="{% static 'works/videos/fire.mp4' %}" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="fire-container hero-content">
+                <p class="fire-eyebrow"><span></span> The heart of a sacred union</p>
+                <h1 class="hero-title">A promise made<br><em>before the sacred fire.</em></h1>
+                <p class="hero-subtitle">A timeless wedding ritual where two lives, two families, and a shared future come together in a circle of blessings.</p>
+                <div class="hero-actions">
+                    <a class="fire-button button-gold" href="#meaning">Discover the meaning <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+                    <a class="hero-text-link" href="#rituals">Explore the rituals <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+                <div class="hero-caption"><span>Tradition · Vows · Togetherness</span><span>ShreeVivah celebrations</span></div>
+            </div>
+            <span class="hero-ornament" aria-hidden="true">अग्नि</span>
+        </header>
+
+        <section class="fire-intro" id="meaning">
+            <div class="fire-container intro-layout">
+                <div>
+                    <p class="fire-eyebrow eyebrow-dark"><span></span> A witness to forever</p>
+                    <h2>More than a ritual.<br>A <em>shared beginning.</em></h2>
+                </div>
+                <div class="intro-copy">
+                    <p>In many Hindu wedding traditions, the sacred fire is at the centre of the ceremony. The couple makes offerings and takes their vows in its presence, surrounded by the blessings of family and community.</p>
+                    <p>Practices and meanings vary between families and regions. At its heart, this moment reflects a commitment to walk forward together—with care, respect, and the support of those they love.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="ritual-section" id="rituals">
+            <div class="fire-container">
+                <div class="section-heading">
+                    <div>
+                        <p class="fire-eyebrow eyebrow-dark"><span></span> Rituals around the flame</p>
+                        <h2>Every offering carries<br>a <em>quiet intention.</em></h2>
+                    </div>
+                    <p>Explore some of the fire ceremonies and traditions often associated with prayer, gratitude, and auspicious beginnings.</p>
+                </div>
+
+                <div class="ritual-grid">
+                    <article class="ritual-card ritual-card-featured">
+                        <img src="{% static 'works/images/fire/agnihotra.jpeg' %}" alt="Agnihotra fire ritual" loading="lazy">
+                        <div class="ritual-caption">
+                            <span>01 · A moment of offering</span>
+                            <h3>Agnihotra</h3>
+                            <p>A focused fire offering observed in some Vedic traditions.</p>
+                            <button class="fire-button button-light read-more" type="button"
+                                data-title="Agnihotra"
+                                data-description="Agnihotra is a Vedic fire offering traditionally performed at particular times, often sunrise and sunset. Offerings such as ghee and grains are made with prayer. Customs and practice vary between lineages and households.">Discover the ritual <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                        </div>
+                    </article>
+                    <article class="ritual-card">
+                        <img src="{% static 'works/images/fire/havan.jpeg' %}" alt="Havan ceremony with offerings" loading="lazy">
+                        <div class="ritual-caption">
+                            <span>02 · A prayer in action</span>
+                            <h3>Havan</h3>
+                            <p>A ceremonial fire offering shared on auspicious occasions.</p>
+                            <button class="fire-button button-light read-more" type="button"
+                                data-title="Havan"
+                                data-description="A havan is a ceremonial offering made into a consecrated fire, often accompanied by prayers or mantras. Families may include a havan as part of a wedding or another auspicious occasion, with details guided by their own customs.">Discover the ritual <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                        </div>
+                    </article>
+                    <article class="ritual-card">
+                        <img src="{% static 'works/images/fire/yajna.jpeg' %}" alt="Yajna fire ceremony" loading="lazy">
+                        <div class="ritual-caption">
+                            <span>03 · A sacred dedication</span>
+                            <h3>Yajna</h3>
+                            <p>A devotional act of offering, gratitude, and shared purpose.</p>
+                            <button class="fire-button button-light read-more" type="button"
+                                data-title="Yajna"
+                                data-description="Yajna refers to a Vedic act of worship and offering, often performed around a sacred fire. It can express devotion, gratitude, and a sense of responsibility to the wider community. Its form and significance depend on the tradition in which it is observed.">Discover the ritual <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <dialog class="fire-dialog" aria-labelledby="fire-dialog-title">
+            <button class="fire-dialog-close" type="button" aria-label="Close ritual details">&times;</button>
+            <p class="fire-eyebrow eyebrow-dark"><span></span> The meaning behind the moment</p>
+            <h2 id="fire-dialog-title"></h2>
+            <p class="fire-dialog-copy"></p>
+        </dialog>
+
+        <section class="vow-section">
+            <div class="fire-container vow-layout">
+                <div class="vow-heading">
+                    <p class="fire-eyebrow"><span></span> A ceremony shared</p>
+                    <h2>From gathering<br>to <em>new beginnings.</em></h2>
+                    <p>Each wedding is personal. The ceremony may differ, but these moments bring loved ones together to witness and celebrate a meaningful commitment.</p>
+                    <a class="fire-button button-outline" href="{% url 'work' %}">Back to wedding gallery <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+                <div class="vow-list">
+                    <article class="vow-item"><span>01</span><div><h3>Gather in blessing</h3><p>Families and guests come together to share their presence and good wishes.</p></div></article>
+                    <article class="vow-item"><span>02</span><div><h3>Make sacred offerings</h3><p>Offerings and prayers mark the ceremony according to the couple’s family traditions.</p></div></article>
+                    <article class="vow-item"><span>03</span><div><h3>Speak the promises</h3><p>The couple honours their commitment in the presence of the sacred fire and their loved ones.</p></div></article>
+                    <article class="vow-item"><span>04</span><div><h3>Begin the journey</h3><p>With blessings around them, they step into married life together.</p></div></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="fire-closing">
+            <div class="fire-container closing-panel">
+                <div>
+                    <p class="fire-eyebrow"><span></span> A promise, held in memory</p>
+                    <h2>May every step ahead<br>be <em>taken together.</em></h2>
+                    <p>Celebrate the rituals, people, and stories that make every wedding unique.</p>
+                </div>
+                <a class="fire-button button-gold" href="{% url 'work' %}">Explore wedding stories <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                <span class="closing-ornament" aria-hidden="true">✳</span>
+            </div>
+        </section>
+    </main>
+
+    {% include "main/footer.html" %}
+    <script src="{% static 'works/js/fire.js' %}" defer></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore the ShreeVivah wedding gallery: first looks, joyful rituals, and timeless moments.">
+  <title>Wedding Gallery | ShreeVivah</title>
+  <link rel="stylesheet" href="{% static 'works/css/work.css' %}">
+</head>
+<body>
+  {% include "main/navbar.html" %}
+
+  <main>
+    <section class="gallery-hero">
+      <img class="gallery-hero-image" src="{% static 'works/images/22.jpeg' %}" alt="" aria-hidden="true">
+      <div class="gallery-hero-shade"></div>
+      <div class="gallery-container gallery-hero-content">
+        <p class="gallery-eyebrow"><span></span> The ShreeVivah wedding gallery</p>
+        <h1>Love, in all<br>its <em>little moments.</em></h1>
+        <p class="gallery-hero-copy">From the first glance to the rituals that bring everyone together, explore the memories that make every wedding story uniquely yours.</p>
+        <a class="gallery-button gallery-button-gold" href="#moments">Explore the gallery <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+        <div class="gallery-hero-caption"><span>01 / 06</span><span>Stories made to be remembered</span></div>
+      </div>
+      <span class="gallery-hero-ornament" aria-hidden="true">S</span>
+    </section>
+
+    <section class="gallery-intro" id="moments">
+      <div class="gallery-container gallery-intro-layout">
+        <div>
+          <p class="gallery-eyebrow gallery-eyebrow-dark"><span></span> A collection of moments</p>
+          <h2>Every chapter has<br>a moment <em>to remember.</em></h2>
+        </div>
+        <p>Weddings are made up of more than one grand occasion. Browse the quiet first looks, the joyful celebrations, and the promises that stay with you long after the day is over.</p>
+      </div>
+    </section>
+
+    <section class="gallery-collections" aria-label="Wedding gallery collections">
+      <div class="gallery-container">
+        <div class="collection-heading">
+          <span>Curated moments</span>
+          <span class="heading-line"></span>
+          <span>06 stories</span>
+        </div>
+
+        <div class="gallery-grid">
+          <a class="gallery-card gallery-card-tall" href="{% url 'firstlook' %}">
+            <img src="{% static 'works/images/22.jpeg' %}" alt="A couple seeing each other for the first time" loading="lazy">
+            <span class="card-index">01</span>
+            <span class="gallery-card-overlay">
+              <span class="card-category">The first moment</span>
+              <span class="card-title">First Look Reactions</span>
+              <span class="card-link">Discover the stories <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+            </span>
+          </a>
+
+          <a class="gallery-card" href="{% url 'mehendi' %}">
+            <img src="{% static 'works/images/27.jpeg' %}" alt="Colourful mehendi celebration" loading="lazy">
+            <span class="card-index">02</span>
+            <span class="gallery-card-overlay">
+              <span class="card-category">Colour & celebration</span>
+              <span class="card-title">Mehendi Fun</span>
+              <span class="card-link">Explore the celebration <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+            </span>
+          </a>
+
+          <a class="gallery-card" href="{% url 'haldi' %}">
+            <img src="{% static 'works/images/28.jpeg' %}" alt="Traditional haldi ceremony" loading="lazy">
+            <span class="card-index">03</span>
+            <span class="gallery-card-overlay">
+              <span class="card-category">A golden tradition</span>
+              <span class="card-title">Haldi Glow</span>
+              <span class="card-link">Step into the moment <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+            </span>
+          </a>
+
+          <a class="gallery-card gallery-card-wide" href="{% url 'fire' %}">
+            <img src="{% static 'works/images/29.jpeg' %}" alt="Sacred wedding fire ceremony" loading="lazy">
+            <span class="card-index">04</span>
+            <span class="gallery-card-overlay">
+              <span class="card-category">A promise witnessed</span>
+              <span class="card-title">Sacred Fire Ritual</span>
+              <span class="card-link">Explore the ritual <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+            </span>
+          </a>
+
+          <a class="gallery-card" href="{% url 'together' %}">
+            <img src="{% static 'works/images/31.jpeg' %}" alt="A couple sharing a moment together" loading="lazy">
+            <span class="card-index">05</span>
+            <span class="gallery-card-overlay">
+              <span class="card-category">A lifetime together</span>
+              <span class="card-title">Growing Old Together</span>
+              <span class="card-link">See their journey <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+            </span>
+          </a>
+
+          <a class="gallery-card" href="{% url 'hand' %}">
+            <img src="{% static 'works/images/32.jpeg' %}" alt="Hands joined in a wedding promise" loading="lazy">
+            <span class="card-index">06</span>
+            <span class="gallery-card-overlay">
+              <span class="card-category">Side by side</span>
+              <span class="card-title">Hand in Hand</span>
+              <span class="card-link">Explore the moment <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-cta">
+      <div class="gallery-container gallery-cta-panel">
+        <div>
+          <p class="gallery-eyebrow"><span></span> Your story belongs here</p>
+          <h2>Every forever begins<br>with a <em>first hello.</em></h2>
+        </div>
+        <a class="gallery-button gallery-button-outline" href="{% url 'signup' %}">Begin your journey <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        <span class="cta-heart" aria-hidden="true"><i class="fa-regular fa-heart"></i></span>
+      </div>
+    </section>
+  </main>
+
+  {% include "main/footer.html" %}
+</body>
+</html>

@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Discover the warmth, traditions, and joyful moments of the Haldi ceremony with ShreeVivah.">
+    <title>The Haldi Ceremony | ShreeVivah</title>
+    <link rel="stylesheet" href="{% static 'works/css/haldi.css' %}">
+</head>
+<body>
+    {% include "main/navbar.html" %}
+
+    <main>
+        <header class="haldi-hero">
+            <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+                <source src="{% static 'works/videos/haldi2.mp4' %}" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="haldi-container hero-content">
+                <p class="haldi-eyebrow"><span></span> A celebration in golden hues</p>
+                <h1 class="hero-title">A little turmeric.<br><em>A lifetime of blessings.</em></h1>
+                <p class="hero-subtitle">The Haldi ceremony is a joyful gathering of family, tradition, and all the love surrounding a new beginning.</p>
+                <div class="hero-actions">
+                    <a href="#ceremony" class="haldi-button button-gold">Discover the ceremony <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+                    <a href="#ritual-gallery" class="hero-text-link">Explore the moments <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+                <div class="hero-caption"><span>Ritual · Joy · Togetherness</span><span>ShreeVivah celebrations</span></div>
+            </div>
+            <span class="hero-ornament" aria-hidden="true">H</span>
+        </header>
+
+        <section class="ceremony-intro" id="ceremony">
+            <div class="haldi-container intro-layout">
+                <div>
+                    <p class="haldi-eyebrow eyebrow-dark"><span></span> Before the vows</p>
+                    <h2>A golden beginning,<br>shared with <em>everyone.</em></h2>
+                </div>
+                <div class="intro-copy">
+                    <p>Haldi is a cherished pre-wedding ritual where loved ones gather to offer blessings and surround the couple with warmth. Turmeric, flowers, familiar songs, and playful laughter turn a simple ceremony into a memory the whole family shares.</p>
+                    <p>Every family celebrates in its own way. What remains constant is the feeling: a joyful pause before the wedding, filled with care, colour, and anticipation.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="ritual-section" id="ritual-gallery">
+            <div class="haldi-container">
+                <div class="section-heading">
+                    <div>
+                        <p class="haldi-eyebrow eyebrow-dark"><span></span> Moments in the making</p>
+                        <h2>The beauty is in<br>the <em>little details.</em></h2>
+                    </div>
+                    <p>From the first blessing to the last burst of laughter, every part of the Haldi has a story worth holding on to.</p>
+                </div>
+
+                <div class="ritual-grid">
+                    <article class="ritual-card ritual-card-featured">
+                        <button class="ritual-image-trigger" type="button" aria-label="Open photo: Family sharing the first Haldi blessings">
+                            <img src="{% static 'works/images/haldi/haldi1.jpeg' %}" alt="Family sharing the first Haldi blessings" loading="lazy">
+                        </button>
+                        <div class="ritual-caption"><span>01 · The first blessing</span><h3>A circle of good wishes</h3></div>
+                    </article>
+                    <article class="ritual-card">
+                        <button class="ritual-image-trigger" type="button" aria-label="Open photo: A joyful Haldi ritual">
+                            <img src="{% static 'works/images/haldi/haldi2.jpeg' %}" alt="A joyful Haldi ritual" loading="lazy">
+                        </button>
+                        <div class="ritual-caption"><span>02 · The ritual</span><h3>Tradition, close to heart</h3></div>
+                    </article>
+                    <article class="ritual-card">
+                        <button class="ritual-image-trigger" type="button" aria-label="Open photo: A couple celebrating their Haldi ceremony">
+                            <img src="{% static 'works/images/haldi/haldi3.jpeg' %}" alt="A couple celebrating their Haldi ceremony" loading="lazy">
+                        </button>
+                        <div class="ritual-caption"><span>03 · The togetherness</span><h3>Everyone has a part</h3></div>
+                    </article>
+                    <article class="ritual-card ritual-card-wide">
+                        <button class="ritual-image-trigger" type="button" aria-label="Open photo: Bright flowers and details from a Haldi celebration">
+                            <img src="{% static 'works/images/haldi/haldi4.jpeg' %}" alt="Bright flowers and details from a Haldi celebration" loading="lazy">
+                        </button>
+                        <div class="ritual-caption"><span>04 · The details</span><h3>Golden hues, happy hearts</h3></div>
+                    </article>
+                    <article class="ritual-card">
+                        <button class="ritual-image-trigger" type="button" aria-label="Open photo: Family and friends enjoying the Haldi">
+                            <img src="{% static 'works/images/haldi/haldi5.jpeg' %}" alt="Family and friends enjoying the Haldi" loading="lazy">
+                        </button>
+                        <div class="ritual-caption"><span>05 · The laughter</span><h3>A little playful, a lot of love</h3></div>
+                    </article>
+                    <article class="ritual-card">
+                        <button class="ritual-image-trigger" type="button" aria-label="Open photo: A special moment during the Haldi ceremony">
+                            <img src="{% static 'works/images/haldi/haldi6.jpeg' %}" alt="A special moment during the Haldi ceremony" loading="lazy">
+                        </button>
+                        <div class="ritual-caption"><span>06 · The memory</span><h3>Made to be remembered</h3></div>
+                    </article>
+                    <article class="ritual-card">
+                        <button class="ritual-image-trigger" type="button" aria-label="Open photo: A festive Haldi celebration with loved ones">
+                            <img src="{% static 'works/images/haldi/haldi7.jpeg' %}" alt="A festive Haldi celebration with loved ones" loading="lazy">
+                        </button>
+                        <div class="ritual-caption"><span>07 · The celebration</span><h3>Colour in every corner</h3></div>
+                    </article>
+                    <article class="ritual-card">
+                        <button class="ritual-image-trigger" type="button" aria-label="Open photo: The couple surrounded by blessings at Haldi">
+                            <img src="{% static 'works/images/haldi/haldi8.jpeg' %}" alt="The couple surrounded by blessings at Haldi" loading="lazy">
+                        </button>
+                        <div class="ritual-caption"><span>08 · The beginning</span><h3>One step closer to forever</h3></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <dialog class="haldi-lightbox" aria-label="Haldi photo viewer">
+            <button class="lightbox-close" type="button" aria-label="Close photo">&times;</button>
+            <img class="lightbox-image" alt="">
+            <p class="lightbox-caption"></p>
+        </dialog>
+
+        <section class="ceremony-flow">
+            <div class="haldi-container flow-layout">
+                <div class="flow-heading">
+                    <p class="haldi-eyebrow"><span></span> A day to remember</p>
+                    <h2>Tradition, told<br>one moment <em>at a time.</em></h2>
+                    <p>There is no single way to celebrate. These familiar moments offer a gentle guide—make them your own, in the order and spirit that feel right for your family.</p>
+                    <a class="haldi-button button-outline" href="{% url 'firstlook' %}">Explore more wedding stories <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+                <div class="flow-list">
+                    <article class="flow-item">
+                        <span class="flow-number">01</span>
+                        <div><h3>Gather close</h3><p>Bring family and friends together in a space filled with flowers, music, and familiar faces.</p></div>
+                    </article>
+                    <article class="flow-item">
+                        <span class="flow-number">02</span>
+                        <div><h3>Offer blessings</h3><p>Loved ones apply a little turmeric and share their hopes for the couple’s life ahead.</p></div>
+                    </article>
+                    <article class="flow-item">
+                        <span class="flow-number">03</span>
+                        <div><h3>Celebrate together</h3><p>Let the songs, smiles, photographs, and playful moments unfold naturally.</p></div>
+                    </article>
+                    <article class="flow-item">
+                        <span class="flow-number">04</span>
+                        <div><h3>Keep the memory</h3><p>Save the little moments that make this family celebration unmistakably yours.</p></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="haldi-closing">
+            <div class="haldi-container closing-panel">
+                <div>
+                    <p class="haldi-eyebrow"><span></span> Every family, its own story</p>
+                    <h2>A celebration full<br>of <em>heart and heritage.</em></h2>
+                    <p>Discover more wedding moments and stories from the ShreeVivah gallery.</p>
+                </div>
+                <a href="{% url 'work' %}" class="haldi-button button-gold">Back to wedding gallery <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                <span class="closing-flower" aria-hidden="true">✳</span>
+            </div>
+        </section>
+    </main>
+
+    {% include "main/footer.html" %}
+    <script src="{% static 'works/js/haldi.js' %}"></script>
+</body>
+</html>

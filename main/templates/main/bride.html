@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bride Profiles</title>
+    <link rel="stylesheet" href="{% static 'main/css/bride.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/profile-cards.css' %}?v=3">
+    <script defer src="{% static 'profiles/js/profile-scroll.js' %}?v=1"></script>
+</head>
+<body class="profile-list-page bride-list-page">
+  {% include "main/navbar.html" %}
+    <div class="top-bar">
+        <a href="{% url 'create_bride' %}">➕ Create Profile</a>
+    </div>
+
+    <main class="bride-page">
+        <h1 class="bride-title">💍 Meet the Brides</h1>
+
+        <div class="profile-grid">
+        {% for profile in featured_brides %}
+        <article class="bride-card">
+            <div class="bride-photo">
+                {% if profile.photo %}
+                  <img src="{{ profile.photo.url }}" alt="{{ profile.name }}">
+                {% elif profile.image_path %}
+                  <img src="{% static profile.image_path %}" alt="{{ profile.name }}">
+                {% else %}
+                  <div class="profile-photo-placeholder" aria-hidden="true">{{ profile.name|first|upper }}</div>
+                {% endif %}
+            </div>
+            <div class="bride-details">
+                <span class="profile-sample-label">Sample profile</span>
+                <h2>{{ profile.name }}</h2>
+                <p><strong>{{ profile.profession }}</strong> · {{ profile.location }}</p>
+                <p>{{ profile.about }}</p>
+                <a href="{% url 'extra_profile' profile.slug %}" class="contact-btn">View Profile</a>
+            </div>
+        </article>
+        {% endfor %}
+
+        <!-- Member-created profiles -->
+        {% for bride in brides %}
+        <article class="bride-card">
+            <div class="bride-photo">
+                {% if bride.photo %}
+                  <img src="{{ bride.photo.url }}" alt="{{ bride.name }}">
+                {% elif bride.image_path %}
+                  <img src="{% static bride.image_path %}" alt="{{ bride.name }}">
+                {% else %}
+                  <div class="profile-photo-placeholder" aria-hidden="true">{{ bride.name|first|upper }}</div>
+                {% endif %}
+            </div>
+            <div class="bride-details">
+                <span class="profile-sample-label">{% if bride.is_sample %}Sample profile{% else %}Member profile{% endif %}</span>
+                <h2>{{ bride.name }}</h2>
+                <p><strong>{{ bride.profession }}</strong> · {{ bride.location }}</p>
+                <p>{{ bride.about }}</p>
+                <a href="{% if bride.slug %}{% url 'extra_profile' bride.slug %}{% else %}{% url 'bride_detail' bride.pk %}{% endif %}" class="contact-btn">View Profile</a>
+            </div>
+        </article>
+        {% endfor %}
+
+        {% for profile in extra_brides %}
+        <article class="bride-card">
+            <div class="bride-photo">
+                {% if profile.photo %}
+                  <img src="{{ profile.photo.url }}" alt="{{ profile.name }}">
+                {% elif profile.image_path %}
+                  <img src="{% static profile.image_path %}" alt="{{ profile.name }}">
+                {% else %}
+                  <div class="profile-photo-placeholder" aria-hidden="true">{{ profile.name|first|upper }}</div>
+                {% endif %}
+            </div>
+            <div class="bride-details">
+                <span class="profile-sample-label">Sample profile</span>
+                <h2>{{ profile.name }}</h2>
+                <p><strong>{{ profile.profession }}</strong> · {{ profile.location }}</p>
+                <p>{{ profile.about }}</p>
+                <a href="{% url 'extra_profile' profile.slug %}" class="contact-btn">View Profile</a>
+            </div>
+        </article>
+        {% endfor %}
+
+        </div>
+    </main>
+  {% include "main/footer.html" %}
+</body>
+
+</html>

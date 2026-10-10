@@ -1,0 +1,233 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hand in Hand</title>
+  <link rel="stylesheet" href="{% static 'works/css/hand.css' %}">
+  <script src="{% static 'works/js/hand.js' %}" defer></script>
+</head>
+<body>
+  {% include "main/navbar.html" %}
+
+<section class="hih-wrap">
+  <header class="hih-hero">
+    <h1>🤝 Hand in Hand</h1>
+    <p>Celebrate togetherness with these beautiful features</p>
+  </header>
+
+  <div class="hih-grid">
+
+    <!-- 1) Compatibility -->
+    <article class="hih-card">
+      <h3>💞 Compatibility Score</h3>
+      <p class="muted">Lifestyle, interests & personality matching</p>
+      <div class="compat-box">
+        <div class="compat-bar"><span id="compatFill" style="width: 76%"></span></div>
+        <div class="compat-row">
+          <input id="compatRange" type="range" min="0" max="100" value="76">
+          <strong><span id="compatVal">76</span>%</strong>
+        </div>
+      </div>
+    </article>
+
+    <!-- 2) Love Notes -->
+    <article class="hih-card">
+      <h3>💌 Love Notes</h3>
+      <p class="muted">Write & save a sweet message</p>
+      <textarea id="loveText" rows="4" placeholder="Write a tiny love note…"></textarea>
+      <div class="row">
+        <button class="btn neon" id="saveLove">Save</button>
+        <button class="btn ghost" id="clearLove">Clear</button>
+      </div>
+      <small id="loveSaved" class="saved-hint" hidden>Saved ✓</small>
+    </article>
+
+    <!-- 3) Favorite Songs -->
+    <article class="hih-card">
+      <h3>🎶 Favorite Songs Together</h3>
+      <p class="muted">Create a tiny playlist (links allowed)</p>
+      <div class="row">
+        <input id="songInput" placeholder="Paste song URL or title">
+        <button class="btn xsmall" id="addSong">Add</button>
+      </div>
+      <ul id="songList" class="chip-list"></ul>
+    </article>
+
+    <!-- 4) Dream Destinations -->
+    <article class="hih-card">
+      <h3>✈️ Dream Destinations</h3>
+      <p class="muted">Tap to select your wishlist</p>
+      <div id="destChips" class="chip-grid">
+        <button class="chip">Paris</button>
+        <button class="chip">Bali</button>
+        <button class="chip">Santorini</button>
+        <button class="chip">Cappadocia</button>
+        <button class="chip">Kyoto</button>
+        <button class="chip">Maldives</button>
+      </div>
+    </article>
+
+    <!-- 5) Commitment Pledge -->
+    <article class="hih-card">
+      <h3>💍 Commitment Pledge</h3>
+      <p class="muted">A mutual promise to keep forever</p>
+      <input id="pledgeNames" placeholder="Your names (e.g. A & B)">
+      <textarea id="pledgeText" rows="3" placeholder="Our pledge…"></textarea>
+      <button class="btn neon" id="savePledge">Save Pledge</button>
+      <div id="pledgePreview" class="pledge-card" hidden>
+        <span class="seal">∞</span>
+        <h4 id="ppNames"></h4>
+        <p id="ppText"></p>
+      </div>
+    </article>
+
+        <!-- 6) Movie Nights -->
+    <article class="hih-card">
+      <h3>🎥 Movie Nights</h3>
+      <p class="muted">Add movies for your cozy nights</p>
+      <div class="row">
+        <input id="movieInput" placeholder="Movie name or link">
+        <button class="btn xsmall" id="addMovie">Add</button>
+      </div>
+      <ul id="movieList" class="chip-list"></ul>
+    </article>
+
+    <!-- 7) Anniversary Countdown -->
+    <article class="hih-card">
+      <h3>📅 Anniversary Countdown</h3>
+      <p class="muted">How many days left till your special day?</p>
+      <input type="date" id="anniDate">
+      <div id="anniResult" style="margin-top:10px; font-weight:bold"></div>
+    </article>
+
+    <!-- 8) Dream Home Style -->
+    <article class="hih-card">
+      <h3>🏡 Dream Home Style</h3>
+      <p class="muted">Pick your future cozy nest</p>
+      <div class="chip-grid" id="homeChips">
+        <button class="chip">Modern Villa</button>
+        <button class="chip">Beach House</button>
+        <button class="chip">Mountain Cabin</button>
+        <button class="chip">City Apartment</button>
+      </div>
+    </article>
+
+    <!-- 9) Pet Wishlist -->
+    <article class="hih-card">
+      <h3>🐾 Pet Wishlist</h3>
+      <p class="muted">Choose your dream pets</p>
+      <div class="chip-grid" id="petChips">
+        <button class="chip">🐶 Dog</button>
+        <button class="chip">🐱 Cat</button>
+        <button class="chip">🐦 Bird</button>
+        <button class="chip">🐠 Fish</button>
+        <button class="chip">🐇 Rabbit</button>
+      </div>
+    </article>
+
+    <!-- 10) Memory Gallery -->
+    <article class="hih-card">
+      <h3>📸 Memory Gallery</h3>
+      <p class="muted">Add small photos (URL)</p>
+      <div class="row">
+        <input id="imgInput" placeholder="Paste image URL">
+        <button class="btn xsmall" id="addImg">Add</button>
+      </div>
+      <div id="imgGallery" style="display:flex; flex-wrap:wrap; gap:8px; margin-top:10px"></div>
+    </article>
+
+        <!-- 11) Anniversary & Special Dates Reminder -->
+    <article class="hih-card">
+      <h3>🌸 Special Dates Reminder</h3>
+      <p class="muted">Save birthdays, anniversaries & special days</p>
+      <div class="row">
+        <input type="text" id="dateTitle" placeholder="Event name (e.g. Birthday)">
+        <input type="date" id="dateInput">
+        <button class="btn xsmall" id="addDate">Add</button>
+      </div>
+      <ul id="dateList" class="chip-list"></ul>
+    </article>
+
+    <!-- 12) Fun Couple Games -->
+    <article class="hih-card">
+      <h3>🎮 Fun Couple Quiz</h3>
+      <p class="muted">Who knows who better? Try a mini quiz!</p>
+      <div class="row">
+        <input type="text" id="quizQ" placeholder="Write a question">
+        <input type="text" id="quizA" placeholder="Answer">
+        <button class="btn xsmall" id="addQuiz">Add</button>
+      </div>
+      <ul id="quizList" class="chip-list"></ul>
+    </article>
+  </div>
+</section>
+
+<section id="extras" class="extras-section">
+  <h2 class="extras-title">💞 Special Corner</h2>
+  <div class="extras-container">
+
+    <!-- Love Quote -->
+    <article class="hih-card">
+      <h3>💖 Love Quote of the Day</h3>
+      <p id="loveQuote">Loading...</p>
+    </article>
+
+    <!-- Mood Tracker -->
+    <article class="hih-card">
+      <h3>😊 Couple Mood Tracker</h3>
+      <p class="muted">How are we feeling today?</p>
+      <div class="row" id="moods">
+        <button class="btn xsmall">😍</button>
+        <button class="btn xsmall">🥰</button>
+        <button class="btn xsmall">😅</button>
+        <button class="btn xsmall">😴</button>
+      </div>
+      <p class="muted">Selected Mood: <span id="savedMood">None</span></p>
+    </article>
+
+    <!-- Gratitude Note -->
+    <article class="hih-card">
+      <h3>🌼 Daily Gratitude</h3>
+      <textarea id="gratitude" rows="3" placeholder="Write something you're thankful for today..."></textarea>
+      <button class="btn small" id="saveGratitude">Save</button>
+      <p class="muted">Last Saved: <span id="lastGratitude">None</span></p>
+    </article>
+
+    <!-- Anniversary Reminder -->
+    <article class="hih-card">
+      <h3>🎉 Anniversary & Special Dates</h3>
+      <input type="date" id="anniversaryDate">
+      <button class="btn small" id="saveAnniversary">Save Date</button>
+      <p class="muted">Next Special Date: <span id="nextAnniversary">None</span></p>
+    </article>
+
+    <!-- Fun Couple Games -->
+    <article class="hih-card">
+      <h3>🎮 Fun Couple Quiz</h3>
+      <p class="muted">Who knows each other better? 💕</p>
+      <button class="btn small" onclick="alert('Coming Soon: Fun Couple Quiz!')">Play Quiz</button>
+    </article>
+
+        <!-- Memory Vault -->
+    <article class="hih-card">
+      <h3>📸 Memory Vault</h3>
+      <textarea id="memoryText" rows="3" placeholder="Write a sweet memory..."></textarea>
+      <button class="btn small" id="saveMemory">Save Memory</button>
+      <p class="muted">Last Memory: <span id="lastMemory">None</span></p>
+    </article>
+
+    <!-- Daily Challenge -->
+    <article class="hih-card">
+      <h3>💡 Daily Challenge</h3>
+      <p id="dailyChallenge">Loading...</p>
+      <button class="btn small" id="newChallenge">Get New Challenge</button>
+    </article>
+  </div>
+</section>
+
+
+  {% include "main/footer.html" %}
+</body>
+</html>

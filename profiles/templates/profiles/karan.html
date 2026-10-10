@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karan Mehta - Full Profile</title>
+    <link rel="stylesheet" href="{% static 'profiles/css/user.css' %}?v=2" />
+</head>
+
+<body>
+  {% include "main/navbar.html" %}
+    <div class="profile-container">
+        <div class="profile-card">
+                  <!-- 🔙 Back Button -->
+        <div class="back-btn" onclick="history.back()">Back</div>
+            <div class="profile-image">
+                <img src="{% static 'profiles/images/karan.jpeg' %}" alt="Karan Mehta" />
+            </div>
+            <div class="profile-details">
+                <h1>Karan Mehta</h1>
+                <p><strong>Profession:</strong> Marketing Professional</p>
+                <p><strong>Location:</strong> Delhi, India</p>
+                <p><strong>About Myself:</strong> Marketing professional passionate about music, traveling, and fitness. Loves exploring new cultures.</p>
+                <p><strong>Expectations:</strong> Seeking a partner with an adventurous spirit and love for life.</p>
+                <p><strong>Family Details:</strong> Nuclear family. Father is a retired officer, mother is a homemaker, and I have a younger brother.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+  {% include "main/footer.html" %}
+</body>
+
+</html>

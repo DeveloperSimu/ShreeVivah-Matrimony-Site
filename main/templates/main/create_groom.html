@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Groom Profile</title>
+    <link rel="stylesheet" href="{% static 'main/css/groom.css' %}">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .top-bar {
+            background: rgba(0,0,0,0.6);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: flex-start;
+        }
+        .top-bar a {
+            color: #ffda79;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .top-bar a:hover {
+            color: #ffd32a;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0px 8px 25px rgba(0,0,0,0.3);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: #ffda79;
+        }
+        form label {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: #fff;
+            font-weight: 600;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.9);
+            font-size: 1rem;
+        }
+        form input:focus, form textarea:focus {
+            outline: none;
+            background: #fff;
+            box-shadow: 0 0 5px #ffda79;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #ffda79;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            color: #2c3e50;
+        }
+        button:hover {
+            background: #ffd32a;
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+  {% include "main/navbar.html" %}
+    <div class="top-bar">
+        <a href="{% url 'groom' %}">⬅ Back to Grooms</a>
+    </div>
+
+    <div class="container">
+        <h1>➕ Create Groom Profile</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <label for="id_name">Full Name</label>
+            {{ form.name }}
+
+            <label for="id_about">About</label>
+            {{ form.about }}
+
+            <label for="id_photo">Upload Photo</label>
+            {{ form.photo }}
+
+            {% if form.errors %}
+                <div style="color: red; margin-top: 10px;">
+                    {{ form.errors }}
+                </div>
+            {% endif %}
+
+            <button type="submit">💾 Save Profile</button>
+        </form>
+    </div>
+  {% include "main/footer.html" %}
+</body>
+</html>

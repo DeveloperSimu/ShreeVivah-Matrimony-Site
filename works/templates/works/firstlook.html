@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firstlove Stories | ShreeVivah</title>
+  <link rel="stylesheet" href="{% static 'works/css/firstlook.css' %}">
+</head>
+<body>
+  {% include "main/navbar.html" %}
+  <header class="hero">
+    <p class="hero-eyebrow">ShreeVivah · Wedding Gallery</p>
+    <h1>Firstlove Stories</h1>
+    <p>Every lasting bond begins somewhere. Explore the first moments that became forever.</p>
+    <button
+      class="add-story-button"
+      id="add-firstlove-toggle"
+      type="button"
+      aria-controls="add-firstlove"
+      aria-expanded="{% if form.errors %}true{% else %}false{% endif %}">
+      <i class="fa-solid fa-plus" aria-hidden="true"></i> Add Firstlove
+    </button>
+  </header>
+
+  <section class="story-submit-section" id="add-firstlove"{% if not form.errors %} hidden{% endif %}>
+    <div class="story-submit-card">
+      <div class="story-submit-heading">
+        <span class="stories-kicker">Share a special beginning</span>
+        <h2>Add a Firstlove story</h2>
+        <p>Tell us how their story began. Add a title, a few words, and a photo to create a new story card.</p>
+      </div>
+      {% if messages %}
+        {% for message in messages %}
+          <p class="form-success" role="status">{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+      <form method="post" enctype="multipart/form-data" class="story-form">
+        {% csrf_token %}
+        {% if form.non_field_errors %}
+          <div class="form-errors" role="alert">{{ form.non_field_errors }}</div>
+        {% endif %}
+        {% for field in form %}
+          <div class="form-field">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}
+            {% if field.help_text %}<small>{{ field.help_text }}</small>{% endif %}
+            {% if field.errors %}<div class="form-errors" role="alert">{{ field.errors }}</div>{% endif %}
+          </div>
+        {% endfor %}
+        <button class="add-story-button" type="submit">
+          <i class="fa-solid fa-plus" aria-hidden="true"></i> Add Firstlove
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <section class="couples">
+    <div class="stories-intro">
+      <span class="stories-kicker">The beginning of forever</span>
+      <h2>Stories worth remembering</h2>
+    </div>
+
+    {% for story in firstlooks %}
+    <article class="couple-card">
+      <button
+        class="story-card-trigger"
+        type="button"
+        data-story-title="{{ story.title }}"
+        data-story="{{ story.description }}"
+        aria-label="Read the full story of {{ story.title }}">
+        {% if story.image %}
+          <img src="{{ story.image.url }}" alt="" loading="lazy">
+        {% elif story.image_path %}
+          <img src="{% static story.image_path %}" alt="" loading="lazy">
+        {% endif %}
+        <span class="story-card-title">{{ story.title }}</span>
+        <span class="story-card-preview">{{ story.description }}</span>
+        <span class="story-card-more">Read full story <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+      </button>
+    </article>
+    {% endfor %}
+  </section>
+
+  <dialog class="story-dialog" id="story-dialog" aria-labelledby="story-dialog-title">
+    <div class="story-dialog-panel">
+      <button class="story-dialog-close" type="button" aria-label="Close story">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <img class="story-dialog-image" id="story-dialog-image" alt="" hidden>
+      <div class="story-dialog-copy">
+        <span class="stories-kicker">The beginning of forever</span>
+        <h2 id="story-dialog-title"></h2>
+        <div class="story-dialog-text" id="story-dialog-text"></div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="{% static 'works/js/firstlook.js' %}" defer></script>
+  {% include "main/footer.html" %}
+</body>
+</html>

@@ -1,0 +1,285 @@
+@import url("../../responsive.css");
+
+body.profile-list-page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: stretch;
+  color: #f8f6f2;
+  background:
+    linear-gradient(145deg, rgba(17, 27, 43, 0.94), rgba(44, 42, 58, 0.9)),
+    url("../images/b2.jpeg") center / cover fixed;
+}
+
+.profile-list-page .site-header {
+  flex-shrink: 0;
+}
+
+.profile-list-page .top-bar {
+  display: flex;
+  width: min(100% - 40px, 1200px);
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px auto 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.profile-list-page .top-bar a {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 10px 16px;
+  border: 1px solid rgba(240, 202, 125, 0.42);
+  border-radius: 999px;
+  color: #fff8e9;
+  background: rgba(255, 255, 255, 0.09);
+  box-shadow: none;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.profile-list-page .top-bar a:hover,
+.profile-list-page .top-bar a:focus-visible {
+  transform: translateY(-2px);
+  border-color: #f0ca7d;
+  background: rgba(240, 202, 125, 0.2);
+}
+
+.profile-list-page .bride-page {
+  width: min(100% - 40px, 1200px);
+  max-width: none;
+  flex: 1;
+  margin: 0 auto;
+  padding: 30px 0 56px;
+}
+
+.profile-list-page .bride-title {
+  display: block;
+  margin: 0 0 32px;
+  color: #fff8e9;
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  font-weight: 750;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  text-align: center;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  text-transform: none;
+  animation: none;
+}
+
+.profile-list-page .bride-title::after {
+  width: 64px;
+  height: 3px;
+  margin-top: 14px;
+  background: linear-gradient(90deg, #e8ba71, #f7e4b9);
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 24px;
+}
+
+.profile-list-page .bride-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  border-radius: 18px;
+  color: #263244;
+  background: #fff;
+  box-shadow: 0 14px 36px rgba(5, 12, 24, 0.24);
+  animation: none;
+  transform: none;
+  transform-style: flat;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.profile-list-page .bride-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(232, 186, 113, 0.8);
+  box-shadow: 0 20px 42px rgba(5, 12, 24, 0.32);
+  filter: none;
+}
+
+.profile-list-page .bride-photo {
+  display: grid;
+  height: 290px;
+  flex: 0 0 290px;
+  place-items: center;
+  overflow: hidden;
+  background: linear-gradient(145deg, #eee7df, #d8dce5);
+}
+
+.profile-list-page .bride-card .bride-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  object-fit: cover;
+  object-position: center 28%;
+  transition: transform 0.35s ease;
+}
+
+.profile-list-page .bride-card:hover .bride-photo img {
+  transform: scale(1.035);
+}
+
+.profile-list-page .bride-details {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  transform: none;
+  animation: none;
+}
+
+.profile-list-page .bride-details h2 {
+  margin: 0 0 9px;
+  color: #18243a;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-shadow: none;
+}
+
+.profile-list-page .profile-sample-label {
+  margin-bottom: 8px;
+  color: #89642e;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.profile-list-page .bride-details p {
+  display: -webkit-box;
+  margin: 0 0 18px;
+  overflow: hidden;
+  color: #586273;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  text-shadow: none;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.profile-list-page .contact-btn {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  padding: 10px 16px;
+  border: 1px solid #c89a53;
+  border-radius: 10px;
+  color: #18243a;
+  background: #f4e4c8;
+  box-shadow: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.profile-list-page .contact-btn:hover,
+.profile-list-page .contact-btn:focus-visible {
+  transform: translateY(-1px);
+  color: #fff;
+  background: #263754;
+  box-shadow: none;
+}
+
+.profile-list-page .contact-btn::after {
+  content: none;
+}
+
+.profile-list-page .profile-photo-placeholder {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  color: #fff8e9;
+  background: linear-gradient(145deg, #7d899d, #354560);
+  font-size: 5rem;
+  font-weight: 300;
+}
+
+.profile-list-page .profile-card-placeholder {
+  border-style: dashed;
+  border-color: rgba(240, 202, 125, 0.58);
+  background: rgba(255, 255, 255, 0.94);
+}
+
+@media (max-width: 900px) {
+  .profile-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .profile-list-page .bride-photo {
+    height: 260px;
+    flex-basis: 260px;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-list-page .top-bar {
+    width: min(100% - 28px, 440px);
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .profile-list-page .top-bar a {
+    flex: 1 1 140px;
+  }
+
+  .profile-list-page .bride-page {
+    width: min(100% - 28px, 440px);
+    padding: 24px 0 40px;
+  }
+
+  .profile-list-page .bride-title {
+    margin-bottom: 24px;
+  }
+
+  .profile-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .profile-list-page .bride-photo {
+    height: 280px;
+    flex-basis: 280px;
+  }
+
+  .profile-list-page .bride-details {
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-list-page .bride-card,
+  .profile-list-page .bride-photo img,
+  .profile-list-page .contact-btn,
+  .profile-list-page .top-bar a {
+    transition: none;
+  }
+}

@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brent Johnson - Full Profile</title>
+  
+  <!-- Static CSS load -->
+  <link rel="stylesheet" href="{% static 'profiles/css/user.css' %}?v=2" />
+</head>
+
+<body>
+  {% include "main/navbar.html" %}
+  <div class="profile-container">
+    <div class="profile-card">
+            <!-- 🔙 Back Button -->
+      <div class="back-btn" onclick="history.back()">Back</div>
+      <div class="profile-image">
+        <img src="{% static 'profiles/images/Brent.jpeg' %}" alt="Brent Johnson" />
+      </div>
+      <div class="profile-details">
+        <h1>Brent Johnson</h1>
+        <p><strong>Profession:</strong> Doctor (Surgeon)</p>
+        <p><strong>Location:</strong> Mumbai, India</p>
+        <p><strong>About Myself:</strong> I'm a surgeon who is passionate about helping others. Outside of work, I love watching movies, reading books, and swimming.</p>
+        <p><strong>Expectations:</strong> Seeking a supportive life partner with a sense of humor and ambition in life.</p>
+        <p><strong>Family Details:</strong> We are a family of five. My father is a lawyer, and my mother is a retired school principal. I have two brothers—both in the medical field.</p>
+      </div>
+      </div>
+    </div>
+  </div>
+  {% include "main/footer.html" %}
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'main/css/site-shell.css' %}?v=2">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+{% url 'index' as home_url %}
+{% url 'work' as work_url %}
+{% url 'success_stories' as stories_url %}
+{% url 'bride' as bride_url %}
+{% url 'groom' as groom_url %}
+{% url 'about' as about_url %}
+{% url 'services' as services_url %}
+{% url 'contact' as contact_url %}
+<header class="site-header">
+  <a class="site-brand" href="{% url 'index' %}">
+    <img src="{% static 'main/images/1.png' %}" alt="">
+    <span>ShreeVivah</span>
+  </a>
+
+  <button class="site-nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
+    <span class="visually-hidden">Toggle navigation</span>
+    <span aria-hidden="true">&#9776;</span>
+  </button>
+
+  <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+    <a href="{{ home_url }}"{% if request.path == home_url %} class="is-active" aria-current="page"{% endif %}>Home</a>
+    <a href="{{ work_url }}"{% if request.path == work_url %} class="is-active" aria-current="page"{% endif %}>Wedding Gallery</a>
+    <a href="{{ stories_url }}"{% if request.path == stories_url %} class="is-active" aria-current="page"{% endif %}>Success Stories</a>
+    <a href="{{ bride_url }}"{% if request.path == bride_url %} class="is-active" aria-current="page"{% endif %}>Brides</a>
+    <a href="{{ groom_url }}"{% if request.path == groom_url %} class="is-active" aria-current="page"{% endif %}>Grooms</a>
+    <a href="{{ about_url }}"{% if request.path == about_url %} class="is-active" aria-current="page"{% endif %}>About</a>
+    <a href="{{ services_url }}"{% if request.path == services_url %} class="is-active" aria-current="page"{% endif %}>Services</a>
+    <a href="{{ contact_url }}"{% if request.path == contact_url %} class="is-active" aria-current="page"{% endif %}>Contact</a>
+    {% if request.user.is_authenticated %}
+      <span class="site-nav-user">Hello, {{ request.user.username }}</span>
+      <a href="{% url 'logout' %}">Logout</a>
+      {% if request.user.is_superuser %}
+        <a href="/admin/"{% if request.path|slice:':7' == '/admin/' %} class="is-active" aria-current="page"{% endif %}>Dashboard</a>
+      {% endif %}
+    {% else %}
+      <a href="{% url 'signup' %}">Sign up</a>
+      <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+  </nav>
+</header>
+<script src="{% static 'main/js/site-shell.js' %}" defer></script>

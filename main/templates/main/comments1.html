@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments</title>
+    <link rel="stylesheet" href="{% static 'main/css/bride.css' %}">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f7fa;
+            margin: 0;
+            padding: 0;
+        }
+        .top-bar {
+            background-color: #1e3a8a;
+            padding: 15px;
+        }
+        .top-bar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .groom-page {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .groom-title {
+            text-align: center;
+            color: #1e3a8a;
+            margin-bottom: 25px;
+        }
+        form {
+            margin-bottom: 30px;
+        }
+        .contact-btn {
+            background-color: #1e3a8a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .contact-btn:hover {
+            background-color: #3b82f6;
+        }
+        .groom-card {
+            background: #f1f5f9;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .groom-details h2 {
+            margin: 0 0 5px 0;
+            color: #1e3a8a;
+        }
+        .groom-details p {
+            margin: 0 0 10px 0;
+            color: #334155;
+        }
+        .groom-details small {
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+        hr {
+            border: none;
+            height: 1px;
+            background: #e2e8f0;
+            margin: 25px 0;
+        }
+    </style>
+</head>
+<body>
+  {% include "main/navbar.html" %}
+    <div class="top-bar">
+        <a href="{% url 'bride' %}">⬅ Back to Brides</a>
+    </div>
+
+    <div class="groom-page">
+        <h1 class="groom-title">💬 Comments</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="contact-btn">Post Comment</button>
+        </form>
+
+        <hr>
+
+        {% for comment in comments %}
+        <div class="groom-card">
+            <div class="groom-details">
+                <h2>
+                    {% if comment.user %}
+                        {{ comment.user.username }}
+                    {% else %}
+                        Anonymous
+                    {% endif %}
+                </h2>
+                <p>{{ comment.text }}</p>
+                <small>{{ comment.created_at|date:"M d, Y H:i" }}</small>
+            </div>
+        </div>
+        {% empty %}
+        <p style="text-align:center;color:#64748b;">No comments yet. Be the first!</p>
+        {% endfor %}
+
+    </div>
+  {% include "main/footer.html" %}
+</body>
+</html>

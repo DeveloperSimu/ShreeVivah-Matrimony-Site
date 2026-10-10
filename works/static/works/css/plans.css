@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+@import url("../../responsive.css");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: clip;
+  color: #f7f4e9;
+  background:
+    radial-gradient(ellipse at 50% 0, rgba(194, 153, 57, 0.19), transparent 50%),
+    #101522;
+  font-family: "Montserrat", sans-serif;
+}
+
+.site-header {
+  flex-shrink: 0;
+}
+
+.services-section {
+  width: min(100% - 40px, 1120px);
+  flex: 1 0 auto;
+  margin: 0 auto;
+  padding: clamp(42px, 7vw, 82px) 0;
+  text-align: center;
+}
+
+.plans-heading {
+  max-width: 700px;
+  margin: 0 auto 42px;
+}
+
+.plans-eyebrow {
+  margin: 0 0 12px;
+  color: #f2cf71;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.plans-heading h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.14;
+  text-wrap: balance;
+}
+
+.plans-intro {
+  max-width: 590px;
+  margin: 16px auto 0;
+  color: #c7cbd5;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.packages-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 24px;
+}
+
+.package-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 30px 26px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 22px;
+  color: #f6f3e9;
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.025));
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
+  text-align: left;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.package-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(242, 207, 113, 0.55);
+  box-shadow: 0 24px 52px rgba(0, 0, 0, 0.34);
+}
+
+.package-card.favorite {
+  border: 2px solid #e6bd55;
+  background: linear-gradient(155deg, rgba(230, 189, 85, 0.18), rgba(255, 255, 255, 0.045));
+  box-shadow: 0 18px 50px rgba(196, 149, 45, 0.15);
+}
+
+.package-label {
+  align-self: flex-start;
+  margin: 0 0 16px;
+  padding: 6px 10px;
+  border: 1px solid rgba(242, 207, 113, 0.36);
+  border-radius: 999px;
+  color: #f2cf71;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.package-card h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.package-description {
+  min-height: 54px;
+  margin: 10px 0 20px;
+  color: #c7cbd5;
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.price {
+  margin: 0 0 22px;
+  color: #f2cf71;
+  font-size: clamp(2.1rem, 4vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.price span {
+  display: inline-block;
+  margin-left: 6px;
+  color: #c7cbd5;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.package-card ul {
+  display: grid;
+  gap: 13px;
+  margin: 0 0 28px;
+  padding: 0;
+  color: #ececf0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  list-style: none;
+}
+
+.package-card ul li {
+  position: relative;
+  padding-left: 25px;
+}
+
+.package-card ul li::before {
+  position: absolute;
+  left: 0;
+  color: #f2cf71;
+  content: "✓";
+  font-weight: 800;
+}
+
+.package-card .btn {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  padding: 11px 18px;
+  border: 1px solid #e6bd55;
+  border-radius: 11px;
+  color: #211a08;
+  background: linear-gradient(135deg, #f4d77f, #d6a834);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.package-card .btn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+}
+
+.package-card .btn-black {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+  background: #171a22;
+}
+
+@media (max-width: 900px) {
+  .packages-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .package-card.favorite {
+    grid-row: auto;
+  }
+
+  .package-card:last-child {
+    grid-column: 1 / -1;
+    width: min(100%, 480px);
+    justify-self: center;
+  }
+}
+
+@media (max-width: 620px) {
+  .services-section {
+    width: min(100% - 28px, 460px);
+    padding: 38px 0 48px;
+  }
+
+  .plans-heading {
+    margin-bottom: 28px;
+  }
+
+  .packages-container {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .package-card.favorite {
+    grid-row: auto;
+  }
+
+  .package-card:last-child {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .package-card {
+    padding: 24px 22px;
+  }
+
+  .package-description {
+    min-height: 0;
+  }
+}

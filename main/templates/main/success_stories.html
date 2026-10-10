@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Success Stories</title>
+  <link rel="stylesheet" href="{% static 'main/css/success_stories.css' %}?v=5">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <script src="{% static 'main/js/success_stories.js' %}?v=7" defer></script>
+</head>
+
+<body class="success-stories-page">
+  {% include "main/navbar.html" %}
+  <div class="success-bg">
+    <main class="stories-shell">
+      <header class="stories-intro">
+        <p class="stories-eyebrow"><span></span> The ShreeVivah journey <span></span></p>
+        <h1 class="title">Real stories.<br><em>Lasting bonds.</em></h1>
+        <p class="subtitle">Every meaningful connection has a beginning. Meet the couples who found theirs with ShreeVivah.</p>
+        <p class="stories-count"><i class="fa-solid fa-heart" aria-hidden="true"></i> 12 stories of togetherness</p>
+      </header>
+
+      <div class="card-container">
+        <!-- Example Card Format -->
+        <article class="story-card" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View the full story of Sounak Chouhan and Radha Chouhan">
+          <img src="{% static 'main/images/8.jpg' %}" alt="Wedding photo of Sounak Chouhan and Radha Chouhan" />
+          <div class="story-content">
+            <h3>Sounak Chouhan & Radha Chouhan</h3>
+            <p class="date">Marriage Date = 20.12.2023</p>
+            <p class="msg">May you be very well. From ShreeVivah, we extend our sincere greetings and congratulations to you.</p>
+            <span class="story-link">View full story</span>
+          </div>
+        </article>
+
+        <article class="story-card" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View the full story of SK Ismail and Rubina Khatun">
+          <img src="{% static 'main/images/7.jpeg' %}" alt="Wedding photo of SK Ismail and Rubina Khatun" />
+          <div class="story-content">
+            <h3>SK Ismail & Rubina Khatun</h3>
+            <p class="date">Marriage Date = 23.12.2024</p>
+            <p class="msg">May you be very well. From ShreeVivah, we extend our sincere greetings and congratulations to you.</p>
+            <span class="story-link">View full story</span>
+          </div>
+        </article>
+
+        <article class="story-card" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View the full story of Lokesh Vatiya and Diviya Vatiya">
+          <img src="{% static 'main/images/12.jpeg' %}" alt="Wedding photo of Lokesh Vatiya and Diviya Vatiya" />
+          <div class="story-content">
+            <h3>Lokesh Vatiya & Diviya Vatiya</h3>
+            <p class="date">Marriage Date = 23.01.24</p>
+            <p class="msg">May you be very well. From ShreeVivah, we extend our sincere greetings and congratulations to you.</p>
+            <span class="story-link">View full story</span>
+          </div>
+        </article>
+
+        <article class="story-card" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View the full story of Rahul Das and Rima Das">
+          <img src="{% static 'main/images/9.jpeg' %}" alt="Wedding photo of Rahul Das and Rima Das" />
+          <div class="story-content">
+            <h3>Rahul Das & Rima Das</h3>
+            <p class="date">Marriage Date = 15.02.2024</p>
+            <p class="msg">Wishing you both a lifetime of love and happiness. Team ShreeVivah congratulates you!</p>
+            <span class="story-link">View full story</span>
+          </div>
+        </article>
+
+        <article class="story-card" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View the full story of Amit Pal and Sunita Pal">
+          <img src="{% static 'main/images/10.jpeg' %}" alt="Wedding photo of Amit Pal and Sunita Pal" />
+          <div class="story-content">
+            <h3>Amit Pal & Sunita Pal</h3>
+            <p class="date">Marriage Date = 10.01.2024</p>
+            <p class="msg">May your love story inspire others. Warm wishes from ShreeVivah!</p>
+            <span class="story-link">View full story</span>
+          </div>
+        </article>
+
+        <article class="story-card" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View the full story of Imran Shaikh and Noor Jahan">
+          <img src="{% static 'main/images/11.jpeg' %}" alt="Wedding photo of Imran Shaikh and Noor Jahan" />
+          <div class="story-content">
+            <h3>Imran Shaikh & Noor Jahan</h3>
+            <p class="date">Marriage Date = 28.12.2023</p>
+            <p class="msg">You found love through ShreeVivah, and we celebrate your joy and journey together!</p>
+            <span class="story-link">View full story</span>
+          </div>
+        </article>
+
+        <article class="story-card" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View the full story of Kunal Roy and Anita Roy">
+          <img src="{% static 'main/images/4.jpeg' %}" alt="Wedding photo of Kunal Roy and Anita Roy" />
+          <div class="story-content">
+            <h3>Kunal Roy & Anita Roy</h3>
+            <p class="date">Marriage Date = 05.03.2024</p>
+            <p class="msg">Blessings and good wishes for a happy married life from ShreeVivah!</p>
+            <span class="story-link">View full story</span>
+          </div>
+        </article>
+
+        <article class="story-card" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View the full story of Arif Khan and Sultana Begum">
+          <img src="{% static 'main/images/15.jpeg' %}" alt="Wedding photo of Arif Khan and Sultana Begum" />
+          <div class="story-content">
+            <h3>Arif Khan & Sultana Begum</h3>
+            <p class="date">Marriage Date = 11.01.2024</p>
+            <p class="msg">Our hearts rejoice seeing you both together! Lots of love from ShreeVivah.</p>
+            <span class="story-link">View full story</span>
+          </div>
+        </article>
+
+        <article class="story-card" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View the full story of Dipak Mondal and Kajal Mondal">
+          <img src="{% static 'main/images/5.jpeg' %}" alt="Wedding photo of Dipak Mondal and Kajal Mondal" />
+          <div class="story-content">
+            <h3>Dipak Mondal & Kajal Mondal</h3>
+            <p class="date">Marriage Date = 21.02.2024</p>
+            <p class="msg">Congratulations on your journey of love. ShreeVivah is proud to be part of it!</p>
+            <span class="story-link">View full story</span>
+          </div>
+        </article>
+
+        <article class="story-card" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View the full story of Sachin Yadav and Priya Yadav">
+          <img src="{% static 'main/images/16.jpeg' %}" alt="Wedding photo of Sachin Yadav and Priya Yadav" />
+          <div class="story-content">
+            <h3>Sachin Yadav & Priya Yadav</h3>
+            <p class="date">Marriage Date = 12.04.2024</p>
+            <p class="msg">Best wishes from ShreeVivah on this beautiful new chapter of your life.</p>
+            <span class="story-link">View full story</span>
+          </div>
+        </article>
+
+        <article class="story-card" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View the full story of Rohit Singh and Anjali Kumari">
+          <img src="{% static 'main/images/17.jpeg' %}" alt="Wedding photo of Rohit Singh and Anjali Kumari" />
+          <div class="story-content">
+            <h3>Rohit Singh & Anjali Kumari</h3>
+            <p class="date">Marriage Date = 19.03.2024</p>
+            <p class="msg">You were meant to find each other. ShreeVivah wishes you a blessed future!</p>
+            <span class="story-link">View full story</span>
+          </div>
+        </article>
+
+        <article class="story-card" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View the full story of Santosh Rana and Meena Rana">
+          <img src="{% static 'main/images/18.jpeg' %}" alt="Wedding photo of Santosh Rana and Meena Rana" />
+          <div class="story-content">
+            <h3>Santosh Rana & Meena Rana</h3>
+            <p class="date">Marriage Date = 26.04.2024</p>
+            <p class="msg">Love wins again! We at ShreeVivah are grateful to witness your happiness.</p>
+            <span class="story-link">View full story</span>
+          </div>
+        </article>
+      </div>
+    </main>
+  </div>
+
+  <dialog class="story-dialog" aria-labelledby="story-dialog-title">
+    <button class="story-dialog-close" type="button" aria-label="Close story">&times;</button>
+    <img class="story-dialog-photo" src="" alt="">
+    <div class="story-dialog-content">
+      <h2 id="story-dialog-title"></h2>
+      <p class="story-dialog-date"><strong>Wedding date:</strong> <span></span></p>
+      <p class="story-dialog-message"></p>
+    </div>
+  </dialog>
+
+  <!-- Footer Include -->
+  {% include "main/footer.html" %}
+</body>
+
+</html>

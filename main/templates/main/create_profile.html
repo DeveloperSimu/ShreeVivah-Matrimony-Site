@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create {{ profile_type }} Profile</title>
+    <link rel="stylesheet" href="{% static 'main/css/create-profile.css' %}?v=1">
+</head>
+<body class="profile-create-page">
+  {% include "main/navbar.html" %}
+  <main class="profile-create-main">
+    <a class="profile-create-back" href="{% url profile_list_url %}">Back to {{ profile_type }} profiles</a>
+    <section class="profile-create-card">
+      <p class="profile-create-eyebrow">Join the community</p>
+      <h1>Create {{ profile_type }} Profile</h1>
+      <p class="profile-create-intro">Share a few details so members can get to know you.</p>
+      <form method="post" enctype="multipart/form-data" novalidate>
+        {% csrf_token %}
+        {% if form.non_field_errors %}
+          <div class="profile-form-errors" role="alert">{{ form.non_field_errors }}</div>
+        {% endif %}
+        {% for field in form %}
+          <div class="profile-form-field{% if field.errors %} has-errors{% endif %}">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}
+            {% if field.help_text %}<p class="profile-form-help">{{ field.help_text }}</p>{% endif %}
+            {% for error in field.errors %}
+              <p class="profile-form-error" role="alert">{{ error }}</p>
+            {% endfor %}
+          </div>
+        {% endfor %}
+        <button class="profile-create-submit" type="submit">Save Profile</button>
+      </form>
+    </section>
+  </main>
+  {% include "main/footer.html" %}
+</body>
+</html>

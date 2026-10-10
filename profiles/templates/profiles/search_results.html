@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{% static 'profiles/css/search_results.css' %}">
+</head>
+<body>
+  {% include "main/navbar.html" %}
+<section class="search-results">
+    <h2>Search Results{% if query %} for "{{ query }}"{% endif %}</h2>
+
+    {% if profiles %}
+        <div class="profile-cards">
+            {% for profile in profiles %}
+                <div class="profile-card">
+                    {% if profile.photo_url %}
+                        <img src="{{ profile.photo_url }}" alt="{{ profile.name }}">
+                    {% else %}
+                        <div class="profile-photo-placeholder" aria-hidden="true">{{ profile.name|first|upper }}</div>
+                    {% endif %}
+                    <h3>{{ profile.name }}</h3>
+                    <p><strong>{{ profile.profession }}</strong>{% if profile.location %} · {{ profile.location }}{% endif %}</p>
+                    <p>{{ profile.about|truncatewords:20 }}</p>
+                    <a href="{{ profile.url }}">View Profile</a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>{% if query %}No profiles found matching "{{ query }}".{% else %}Enter a name, profession, location, or keyword to search profiles.{% endif %}</p>
+    {% endif %}
+</section>
+  {% include "main/footer.html" %}
+</body>
+</html>

@@ -1,0 +1,122 @@
+@import url("../../responsive.css");
+
+/* ===== Premium Background ===== */
+body {
+  background: url('../images/b1.jpeg') no-repeat center center;
+  background-size: cover;   /* ✅ full screen cover */
+  min-height: 100vh;
+  height: auto;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.auth-content {
+  display: grid;
+  flex: 1;
+  place-items: center;
+  width: 100%;
+  padding: clamp(16px, 4vw, 32px);
+}
+
+/* ===== Glassmorphism Card (lighter white tone) ===== */
+.card {
+  background: rgba(255, 255, 255, 0.75);   /* brighter glass */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 2rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Titles ===== */
+.card h3 {
+  font-weight: 700;
+  font-size: 1.9rem;
+  color: #2575fc;   /* premium blue */
+}
+
+.card p {
+  color: #444;
+  font-size: 0.95rem;
+}
+
+/* ===== Labels ===== */
+.form-label {
+  font-weight: 500;
+  color: #222;
+}
+
+/* ===== Inputs ===== */
+.form-control {
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #222;
+  transition: all 0.3s ease;
+}
+
+.form-control::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.form-control:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 0 0.2rem rgba(37, 117, 252, 0.25);
+  background: #fff;
+  color: #222;
+}
+
+/* ===== Checkbox ===== */
+.form-check-label {
+  color: #222;
+}
+
+.form-check-input:checked {
+  background-color: #2575fc !important;
+  border-color: #2575fc !important;
+}
+
+/* ===== Button ===== */
+.btn-primary {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%) !important;
+  border: none !important;
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 600;
+  transition: all 0.4s ease;
+  box-shadow: 0px 4px 15px rgba(37, 117, 252, 0.4);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%) !important;
+  box-shadow: 0px 6px 18px rgba(106, 17, 203, 0.45);
+}
+
+/* ===== Links ===== */
+.text-muted {
+  color: #333 !important;
+}
+
+.text-muted a {
+  color: #6a11cb;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.text-muted a:hover {
+  color: #2575fc;
+  text-decoration: underline;
+}

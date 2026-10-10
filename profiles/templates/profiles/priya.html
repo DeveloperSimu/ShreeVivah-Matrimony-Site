@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Priya Desai - Full Profile</title>
+    <link rel="stylesheet" href="{% static 'profiles/css/user.css' %}?v=2" />
+</head>
+
+<body>
+  {% include "main/navbar.html" %}
+    <div class="profile-container">
+        <div class="profile-card">
+                  <!-- 🔙 Back Button -->
+        <div class="back-btn" onclick="history.back()">Back</div>
+            <div class="profile-image">
+                <img src="{% static 'profiles/images/Priya.jpeg' %}" alt="Priya Desai" />
+            </div>
+            <div class="profile-details">
+                <h1>Priya Desai</h1>
+                <p><strong>Profession:</strong> Teacher</p>
+                <p><strong>Location:</strong> Mumbai, India</p>
+                <p><strong>About Myself:</strong> I love teaching children and enjoy classical music.</p>
+                <p><strong>Expectations:</strong> Looking for a supportive and cheerful life partner.</p>
+                <p><strong>Family Details:</strong> Parents are retired teachers. I have a younger sister.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+  {% include "main/footer.html" %}
+</body>
+
+</html>

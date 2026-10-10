@@ -1,0 +1,237 @@
+@import url("../../responsive.css");
+
+/* ========= PAGE ========= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    place-items: center;
+
+    /* Background image */
+    background: url("../images/b2.jpeg") no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+}
+
+.bride-page {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* ========= TOP BAR ========= */
+.top-bar {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 25px;
+    background: rgba(0,0,0,0.6);
+    border-bottom: 2px solid #ff66b2;
+    z-index: 1;
+    backdrop-filter: blur(6px);
+}
+
+.top-bar a {
+    margin-left: 15px;
+    text-decoration: none;
+    background: linear-gradient(145deg, #ff33aa, #ff66cc);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(255,102,178,0.6);
+    transition: all 0.3s ease;
+}
+
+.top-bar a:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: linear-gradient(145deg, #ff66cc, #ff33aa);
+    box-shadow: 0 6px 20px rgba(255,102,178,0.8);
+}
+
+/* ========= BRIDE TITLE ========= */
+.bride-title {
+    text-align: center;
+    font-size: 3.5rem;
+    margin: 40px 0 50px 0;
+    color: #e60073; /* deep pink */
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 8px #ff66b2, 0 0 16px #ff99cc, 0 0 20px #ff33aa;
+    line-height: 1.2;
+    position: relative;
+    display: inline-block;
+    animation: titleGlow 2.5s ease-in-out infinite alternate;
+}
+
+.bride-title::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 5px;
+    background: linear-gradient(to right, #ff66b2, #ff33aa);
+    margin: 12px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* ========= CARDS ========= */
+.bride-card {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 20px rgba(255,255,255,0.05);
+    margin-bottom: 35px;
+    overflow: hidden;
+    transition: transform 0.6s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+    position: relative;
+    animation: floatCard 6s ease-in-out infinite;
+    z-index: 1;
+}
+
+/* ========= Deep vivid gradients for all cards ========= */
+.bride-card:nth-child(1) { background: linear-gradient(145deg, #f60046, #ca0e8b); }
+.bride-card:nth-child(2) { background: linear-gradient(145deg, #0f94c0, #c0e7ff); }
+.bride-card:nth-child(3) { background: linear-gradient(145deg, #33d10b, #cfffcc); }
+.bride-card:nth-child(4) { background: linear-gradient(145deg, #c1a808, #fff0b3); }
+.bride-card:nth-child(5) { background: linear-gradient(145deg, #6e19bc, #d1c0ff); }
+
+/* Hover 3D tilt + neon glow */
+.bride-card:hover {
+    transform: rotateY(5deg) rotateX(2deg) scale(1.04);
+    box-shadow: 0 30px 70px rgba(0,0,0,0.35), 0 0 36px #ff66b2, 0 0 48px #ff99cc;
+    filter: saturate(1.1);
+}
+
+/* ========= PROFILE PHOTO ========= */
+.bride-photo img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 20px;
+    object-fit: cover;
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.bride-card:nth-child(1) .bride-photo img { border: 5px solid #ff66b2; box-shadow: 0 0 25px #ff66b2; }
+.bride-card:nth-child(2) .bride-photo img { border: 5px solid #33c1ff; box-shadow: 0 0 25px #33c1ff; }
+.bride-card:nth-child(3) .bride-photo img { border: 5px solid #33ff77; box-shadow: 0 0 25px #33ff77; }
+.bride-card:nth-child(4) .bride-photo img { border: 5px solid #ffd633; box-shadow: 0 0 25px #ffd633; }
+.bride-card:nth-child(5) .bride-photo img { border: 5px solid #b633ff; box-shadow: 0 0 25px #b633ff; }
+
+.bride-photo img:hover {
+    transform: scale(1.08) rotate(3deg) translateZ(15px);
+}
+
+/* ========= DETAILS ========= */
+.bride-details {
+    padding: 25px;
+    transform: translateZ(20px);
+    animation: slideIn 0.7s ease-out;
+}
+
+.bride-details h2 {
+    margin: 0 0 10px;
+    color: #ffffff;
+    text-shadow: 0 0 8px #ff66b2, 0 0 16px #ff99cc;
+}
+
+.bride-details p {
+    margin: 0 0 10px;
+    color: #f0f0f0;
+}
+
+/* ========= CONTACT BUTTON ========= */
+.contact-btn {
+    display: inline-block;
+    background: linear-gradient(145deg, #ff33aa, #ff66cc);
+    color: white;
+    padding: 14px 30px;
+    text-decoration: none;
+    border-radius: 16px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    box-shadow: 0 6px 25px rgba(255,102,178,0.7), 0 0 36px #ff99cc;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-btn:hover {
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 10px 30px rgba(255,102,178,0.8), 0 0 40px #ff99cc;
+}
+
+.contact-btn::after {
+    content: "";
+    position: absolute;
+    top: -120%;
+    left: -50%;
+    width: 200%;
+    height: 300%;
+    background: radial-gradient(circle, #ffffff55 0%, transparent 60%);
+    transform: rotate(25deg);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+}
+
+.contact-btn:hover::after {
+    transform: translateX(100%) rotate(25deg);
+    opacity: 0.7;
+}
+
+/* ========= ANIMATIONS ========= */
+@keyframes floatCard { 0%,100%{ transform: translateY(0px); } 50%{ transform: translateY(-8px); } }
+@keyframes slideIn { from{ transform: translateX(40px) translateZ(20px); opacity:0; } to{ transform: translateX(0) translateZ(20px); opacity:1; } }
+@keyframes titleGlow { from{ text-shadow:0 0 8px #ff66b2,0 0 16px #ff99cc;} to{ text-shadow:0 0 14px #ff66b2,0 0 26px #ff99cc;} }
+
+/* ========= MEDIA QUERY ========= */
+@media(max-width:768px){
+    .bride-card{flex-direction:column;text-align:center;}
+    .bride-photo img{margin:15px 0;}
+    .bride-details{padding:15px;}
+    .top-bar{justify-content:center;}
+}
+
+/* =========== create groom profile ============*/
+.profile-container {
+    max-width: 800px;
+    margin: 40px auto;
+    display: flex;
+    background: #fff;
+    color: #333;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 6px 20px rgba(0,0,0,0.3);
+}
+.profile-photo {
+    flex: 1;
+    min-width: 250px;
+}
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile-details {
+    flex: 2;
+    padding: 20px;
+}
+.profile-details h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+.profile-details p {
+    margin: 8px 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}

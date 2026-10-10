@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore bridal, Arabic, traditional, and modern mehendi designs in the ShreeVivah gallery.">
+  <title>Mehendi Art | ShreeVivah</title>
+  <link rel="stylesheet" href="{% static 'works/css/mehendi.css' %}">
+</head>
+<body>
+  {% include "main/navbar.html" %}
+
+  <main>
+    <header class="mehendi-hero">
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="{% static 'works/videos/ssvid.net--Indian-Mehndi-Cinematic-Video-TJ-Films-Photography-2021_1080p.mp4' %}" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="mehendi-container hero-content">
+        <p class="mehendi-eyebrow"><span></span> The art of celebration</p>
+        <h1 class="hero-title">A little henna.<br><em>A lot of meaning.</em></h1>
+        <p class="hero-tagline">Explore the patterns, traditions, and personal touches that make every mehendi story one of a kind.</p>
+        <div class="hero-actions">
+          <a href="#design-gallery" class="mehendi-button button-gold">Explore designs <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+          <button class="mehendi-button button-outline" id="add-design-toggle" type="button" aria-controls="add-design" aria-expanded="{% if form.errors %}true{% else %}false{% endif %}">
+            <i class="fa-solid fa-plus" aria-hidden="true"></i> Share your design
+          </button>
+        </div>
+        <div class="hero-caption"><span>Tradition, drawn by hand</span><span>ShreeVivah celebrations</span></div>
+      </div>
+      <span class="hero-ornament" aria-hidden="true">M</span>
+    </header>
+
+    <section class="mehendi-intro">
+      <div class="mehendi-container intro-layout">
+        <div>
+          <p class="mehendi-eyebrow eyebrow-dark"><span></span> More than an adornment</p>
+          <h2>Every pattern holds<br>a <em>piece of tradition.</em></h2>
+        </div>
+        <p>From elaborate bridal details to a simple flourish for a family celebration, mehendi brings people together through craft, culture, and the joy of getting ready for a new beginning.</p>
+      </div>
+    </section>
+
+    <section class="design-section" id="design-gallery">
+      <div class="mehendi-container">
+        <div class="design-heading">
+          <div>
+            <p class="mehendi-eyebrow eyebrow-dark"><span></span> The design library</p>
+            <h2>Find a style that feels <em>like you.</em></h2>
+          </div>
+          <p>Browse the collection or share a design of your own with the ShreeVivah community.</p>
+        </div>
+
+        <div class="gallery-toolbar">
+          <div class="design-filters" role="group" aria-label="Filter designs by style">
+            <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All designs</button>
+            {% for category in categories %}
+              <button class="filter-btn" type="button" data-filter="{{ category.pk }}" aria-pressed="false">{{ category.name }}</button>
+            {% endfor %}
+          </div>
+          <span class="design-count">{{ designs|length }} {% if designs|length == 1 %}design{% else %}designs{% endif %}</span>
+        </div>
+
+        {% if messages %}
+          {% for message in messages %}
+            <p class="form-success" role="status">{{ message }}</p>
+          {% endfor %}
+        {% endif %}
+
+        <div class="gallery-grid" id="mehendi-gallery">
+          {% for design in designs %}
+            <article class="design-card" data-category="{{ design.category_id }}">
+              {% if design.image %}
+                <button class="design-image-trigger" type="button" aria-label="Open photo: {{ design.title }}">
+                  <img src="{{ design.image.url }}" alt="{{ design.title }} — {{ design.category.name }} mehendi" loading="lazy">
+                </button>
+              {% elif design.image_path %}
+                <button class="design-image-trigger" type="button" aria-label="Open photo: {{ design.title }}">
+                  <img src="{% static design.image_path %}" alt="{{ design.title }} — {{ design.category.name }} mehendi" loading="lazy">
+                </button>
+              {% endif %}
+              <div class="design-card-caption">
+                <span class="design-category">{{ design.category.name }}</span>
+                <h3>{{ design.title }}</h3>
+                {% if design.description %}<p>{{ design.description }}</p>{% endif %}
+              </div>
+            </article>
+          {% empty %}
+            <div class="gallery-empty">
+              <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+              <h3>The gallery is waiting for its first design.</h3>
+              <p>Share a favourite mehendi style to begin the collection.</p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <dialog class="mehendi-lightbox" aria-label="Mehendi design photo viewer">
+      <button class="lightbox-close" type="button" aria-label="Close photo">&times;</button>
+      <img class="lightbox-image" alt="">
+      <p class="lightbox-caption"></p>
+    </dialog>
+
+    <section class="share-section" id="add-design"{% if not form.errors %} hidden{% endif %}>
+      <div class="mehendi-container">
+        <div class="share-panel">
+          <div class="share-copy">
+            <p class="mehendi-eyebrow"><span></span> Made by you</p>
+            <h2>Share a design<br>you <em>love.</em></h2>
+            <p>Add your mehendi photo to the gallery and inspire someone’s next celebration. Your design appears as soon as you submit it.</p>
+          </div>
+          <div class="share-form-wrap">
+            <form method="post" enctype="multipart/form-data" class="design-form">
+              {% csrf_token %}
+              {% if form.non_field_errors %}
+                <div class="form-errors" role="alert">{{ form.non_field_errors }}</div>
+              {% endif %}
+              {% for field in form %}
+                <div class="form-field">
+                  <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                  {{ field }}
+                  {% if field.help_text %}<small>{{ field.help_text }}</small>{% endif %}
+                  {% if field.errors %}<div class="form-errors" role="alert">{{ field.errors }}</div>{% endif %}
+                </div>
+              {% endfor %}
+              <button class="mehendi-button button-gold" type="submit"><i class="fa-solid fa-arrow-up-from-bracket" aria-hidden="true"></i> Add to gallery</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="design-notes">
+      <div class="mehendi-container notes-layout">
+        <div>
+          <p class="mehendi-eyebrow"><span></span> A thoughtful touch</p>
+          <h2>From intricate<br>to <em>effortlessly elegant.</em></h2>
+        </div>
+        <div class="notes-list">
+          <article><span>01</span><div><h3>Bridal artistry</h3><p>Detailed patterns made for the moments everyone gathers around.</p></div></article>
+          <article><span>02</span><div><h3>Modern minimal</h3><p>Clean, graceful lines for a lighter and more personal look.</p></div></article>
+          <article><span>03</span><div><h3>Tradition, reimagined</h3><p>Classic motifs and flowing forms, each with its own character.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="mehendi-cta">
+      <div class="mehendi-container cta-panel">
+        <div>
+          <p class="mehendi-eyebrow"><span></span> Make it your moment</p>
+          <h2>Every celebration<br>has its own <em>pattern.</em></h2>
+          <p>Have a question or want to know more? Our team would be glad to hear from you.</p>
+        </div>
+        <a href="{% url 'contact' %}" class="mehendi-button button-outline">Contact ShreeVivah <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </section>
+  </main>
+
+  <script src="{% static 'works/js/mehendi.js' %}" defer></script>
+  {% include "main/footer.html" %}
+</body>
+</html>

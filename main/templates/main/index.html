@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShreeVivah - Matrimony</title>
+
+    <!-- ✅ Static CSS -->
+    <link rel="stylesheet" href="{% static 'main/css/index.css' %}?v=12" />
+    <!-- Font Awesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- ✅ Static JS -->
+    <script defer src="{% static 'main/js/index.js' %}?v=2"></script>
+</head>
+
+<body>
+  {% include "main/navbar.html" %}
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-eyebrow"><span></span> ShreeVivah <span></span> A meaningful beginning</p>
+            <h1>Find a partner who<br><em>feels like home.</em></h1>
+            <p class="hero-intro">Meet genuine people, discover what matters to each other, and begin your next chapter at your own pace.</p>
+            <a href="{% url 'signup' %}" class="btn">Begin your story <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+
+            <div class="hero-search-wrap">
+                <span class="hero-search-label">Already have someone in mind?</span>
+                <form method="GET" action="{% url 'profile_search' %}" class="search-bar" data-suggestions-url="{% url 'profile_name_suggestions' %}">
+                    <label class="visually-hidden" for="hero-profile-search">Search profiles by name</label>
+                    <input id="hero-profile-search" type="search" name="q" placeholder="Search profiles by name..." required autocomplete="off" aria-controls="profile-search-suggestions" aria-expanded="false" />
+                    <div class="search-suggestions" id="profile-search-suggestions" role="listbox" aria-label="Matching profiles" hidden></div>
+                    <button type="submit" aria-label="Search profiles"></button>
+                </form>
+            </div>
+        </div>
+        <span class="hero-caption"><i class="fa-regular fa-heart" aria-hidden="true"></i> Where true bonds begin</span>
+    </section>
+
+    <!-- Bride/Groom option -->
+    <section class="select-gender">
+        <div class="preference-inner">
+            <div class="preference-heading">
+                <p class="preference-eyebrow"><span></span> Begin with what matters to you</p>
+                <h2>Browse by <em>preference</em></h2>
+                <p>Explore profiles and take the first step towards a connection that feels right.</p>
+            </div>
+            <div class="gender-options">
+                <div class="option-card bride">
+                    <div class="option-shade"></div>
+                    <div class="overlay">
+                        <span class="option-index">01 <i class="fa-solid fa-minus" aria-hidden="true"></i> YOUR SEARCH</span>
+                        <span class="option-icon" aria-hidden="true"><i class="fa-solid fa-user"></i></span>
+                        <h3>Looking for a bride?</h3>
+                        <p>Meet thoughtful grooms and discover the person behind each profile.</p>
+                        <a href="{% url 'groom' %}" class="gender-btn">Explore grooms <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+
+                <div class="option-card groom">
+                    <div class="option-shade"></div>
+                    <div class="overlay">
+                        <span class="option-index">02 <i class="fa-solid fa-minus" aria-hidden="true"></i> YOUR SEARCH</span>
+                        <span class="option-icon" aria-hidden="true"><i class="fa-solid fa-user"></i></span>
+                        <h3>Looking for a groom?</h3>
+                        <p>Browse bride profiles and find someone who shares your hopes for the future.</p>
+                        <a href="{% url 'bride' %}" class="gender-btn">Explore brides <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="preference-footnote"><i class="fa-solid fa-lock" aria-hidden="true"></i> Explore at your pace. Your next chapter starts with a simple hello.</p>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919876543210?text=Hello%20I%20am%20interested%20in%20your%20Matrimony%20Website"
+        target="_blank"
+        id="whatsapp-btn">
+        <img src="{% static 'main/images/WhatsApp.svg' %}" alt="WhatsApp">
+    </a>
+
+    <section id="why-choose-us" class="why-choose-us">
+        <div class="wc-container">
+            <p class="section-eyebrow">A more meaningful way to meet</p>
+            <h2 class="wc-title">A thoughtful start to<br><span>your forever.</span></h2>
+            <p class="wc-sub">Real connections begin with trust, care, and the confidence to be yourself.</p>
+
+            <div class="wc-grid">
+                <article class="wc-card">
+                    <div class="wc-card-inner">
+                        <span class="wc-card-icon" aria-hidden="true"><i class="fa-solid fa-user-check"></i></span>
+                        <p class="wc-card-kicker">01 · GENUINE CONNECTIONS</p>
+                        <h3 class="wc-card-title">Profiles with purpose</h3>
+                        <p class="wc-card-desc">Explore thoughtful profiles created by people who are ready to build a meaningful relationship.</p>
+                    </div>
+                </article>
+
+                <article class="wc-card">
+                    <div class="wc-card-inner">
+                        <span class="wc-card-icon" aria-hidden="true"><i class="fa-solid fa-shield-heart"></i></span>
+                        <p class="wc-card-kicker">02 · YOUR PACE, YOUR CHOICE</p>
+                        <h3 class="wc-card-title">Comfort comes first</h3>
+                        <p class="wc-card-desc">Take your time getting to know someone and choose when you are ready to take the next step.</p>
+                    </div>
+                </article>
+
+                <article class="wc-card">
+                    <div class="wc-card-inner">
+                        <span class="wc-card-icon" aria-hidden="true"><i class="fa-solid fa-heart"></i></span>
+                        <p class="wc-card-kicker">03 · VALUES THAT MATTER</p>
+                        <h3 class="wc-card-title">More than a first impression</h3>
+                        <p class="wc-card-desc">Discover the hopes, family, and everyday details that help you find common ground.</p>
+                    </div>
+                </article>
+
+                <article class="wc-card">
+                    <div class="wc-card-inner">
+                        <span class="wc-card-icon" aria-hidden="true"><i class="fa-solid fa-comments"></i></span>
+                        <p class="wc-card-kicker">04 · A REAL CONVERSATION</p>
+                        <h3 class="wc-card-title">Start with a hello</h3>
+                        <p class="wc-card-desc">Browse at your own pace, find someone who feels right, and let a conversation unfold.</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="wc-cta">
+                <a href="{% url 'signup' %}" class="wc-btn">Begin your story <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                <a href="{% url 'plans' %}" class="wc-link">Explore membership plans</a>
+            </div>
+        </div>
+    </section>
+
+    
+  {% include "main/footer.html" %}
+</body>
+
+</html>

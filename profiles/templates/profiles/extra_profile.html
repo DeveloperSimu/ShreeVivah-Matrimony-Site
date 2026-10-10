@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ profile.name }} - Full Profile</title>
+  <link rel="stylesheet" href="{% static 'profiles/css/user.css' %}?v=4">
+  <script defer src="{% static 'profiles/js/profile-scroll.js' %}?v=1"></script>
+</head>
+<body>
+  {% include "main/navbar.html" %}
+  <main class="profile-container">
+    <article class="profile-card">
+      <a class="back-btn" href="{% if profile_list_url %}{% url profile_list_url %}{% elif profile.gender == 'bride' %}{% url 'bride' %}{% else %}{% url 'groom' %}{% endif %}">Back to profiles</a>
+      <div class="profile-image">
+        {% if profile.photo %}
+          <img src="{{ profile.photo.url }}" alt="{{ profile.name }}">
+        {% elif profile.image_path %}
+          <img src="{% static profile.image_path %}" alt="{{ profile.name }}">
+        {% else %}
+          <div class="profile-photo-placeholder" aria-hidden="true">{{ profile.name|first|upper }}</div>
+        {% endif %}
+      </div>
+      <div class="profile-details">
+        <p class="sample-profile-label">{% if profile.is_sample %}Sample profile{% else %}Member profile{% endif %}</p>
+        <h1>{{ profile.name }}</h1>
+        <p><strong>Profession:</strong> {{ profile.profession }}</p>
+        <p><strong>Location:</strong> {{ profile.location }}</p>
+        <p><strong>About Myself:</strong> {{ profile.about }}</p>
+        <p><strong>Expectations:</strong> {{ profile.expectations }}</p>
+        <p><strong>Family Details:</strong> {{ profile.family }}</p>
+      </div>
+    </article>
+  </main>
+  {% include "main/footer.html" %}
+</body>
+</html>

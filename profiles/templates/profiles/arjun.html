@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arjun Singh - Full Profile</title>
+    <link rel="stylesheet" href="{% static 'profiles/css/user.css' %}?v=2" />
+</head>
+
+<body>
+  {% include "main/navbar.html" %}
+    <div class="profile-container">
+        <div class="profile-card">
+                  <!-- 🔙 Back Button -->
+        <div class="back-btn" onclick="history.back()">Back</div>
+            <div class="profile-image">
+                <img src="{% static 'profiles/images/arjun.jpeg' %}" alt="Arjun Singh" />
+            </div>
+            <div class="profile-details">
+                <h1>Arjun Singh</h1>
+                <p><strong>Profession:</strong> Software Developer</p>
+                <p><strong>Location:</strong> Pune, India</p>
+                <p><strong>About Myself:</strong> Enthusiastic software developer who loves hiking and photography. Always eager to learn new tech.</p>
+                <p><strong>Expectations:</strong> Looking for a supportive partner who shares passion for growth and adventure.</p>
+                <p><strong>Family Details:</strong> We are a joint family. Father is a businessman, mother is a teacher, and I have one elder sister.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+  {% include "main/footer.html" %}
+</body>
+
+</html>

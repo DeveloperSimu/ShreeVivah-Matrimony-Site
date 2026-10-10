@@ -1,0 +1,40 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rahul Verma - Full Profile</title>
+    
+    <!-- CSS from static -->
+    <link rel="stylesheet" href="{% static 'profiles/css/user.css' %}?v=2" />
+</head>
+
+<body>
+  {% include "main/navbar.html" %}
+    <div class="profile-container">
+        <div class="profile-card">
+                <!-- 🔙 Back Button -->
+        <div class="back-btn" onclick="history.back()">Back</div>
+            <div class="profile-image">
+                <img src="{% static 'profiles/images/rahul .jpeg' %}" alt="Rahul Verma" />
+            </div>
+            <div class="profile-details">
+                <h1>Rahul Verma</h1>
+                <p><strong>Profession:</strong> Software Engineer</p>
+                <p><strong>Location:</strong> Bangalore, India</p>
+                <p><strong>About Myself:</strong> I am a passionate coder with a deep interest in developing scalable
+                    web applications. I enjoy traveling, listening to indie music, and exploring different cuisines.</p>
+                <p><strong>Expectations:</strong> Looking for an understanding partner who values growth, honesty, and
+                    communication.</p>
+                <p><strong>Family Details:</strong> We are a nuclear family. My father is a government employee, mother
+                    is a homemaker, and I have one younger sister studying engineering.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+  {% include "main/footer.html" %}
+</body>
+
+</html>

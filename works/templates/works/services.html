@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore ShreeVivah's thoughtful matchmaking services, profile discovery, and membership plans.">
+    <title>Services | ShreeVivah</title>
+    <link rel="stylesheet" href="{% static 'works/css/services.css' %}">
+</head>
+<body>
+    {% include "main/navbar.html" %}
+
+    <main>
+        <section class="services-hero">
+            <img class="hero-image" src="{% static 'main/images/pic17.jpg' %}" alt="" aria-hidden="true">
+            <div class="hero-shade"></div>
+            <div class="container hero-content">
+                <div class="hero-copy" data-reveal>
+                    <p class="eyebrow"><span></span> The ShreeVivah experience</p>
+                    <h1>A more thoughtful way to find <em>your person.</em></h1>
+                    <p class="hero-description">
+                        Meaningful matchmaking starts with the right introduction. Discover profiles that reflect what matters to you, with a considered experience for every step of the journey.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="{% url 'signup' %}" class="button button-gold">Create your profile <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        <a href="#our-services" class="text-link">Explore our services <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <aside class="hero-note" data-reveal aria-label="Our approach">
+                    <span class="note-icon"><i class="fa-solid fa-heart-circle-check" aria-hidden="true"></i></span>
+                    <p class="note-label">A better beginning</p>
+                    <p class="note-copy">Personal discovery, thoughtful tools, and room for real connection.</p>
+                    <div class="note-rule"></div>
+                    <p class="note-foot"><i class="fa-solid fa-lock" aria-hidden="true"></i> Your journey, at your pace</p>
+                </aside>
+                <a class="scroll-cue" href="#our-services" aria-label="Scroll to services"><span></span></a>
+            </div>
+        </section>
+
+        <section class="intro-section" id="our-services">
+            <div class="container">
+                <div class="section-heading" data-reveal>
+                    <p class="eyebrow eyebrow-dark"><span></span> Made for meaningful connections</p>
+                    <h2>More than a profile.<br><em>A journey with purpose.</em></h2>
+                    <p>From creating your introduction to exploring potential matches, ShreeVivah brings the important parts of matchmaking together in one considered place.</p>
+                </div>
+
+                <div class="service-grid">
+                    <article class="service-card service-card-featured" data-reveal>
+                        <div class="card-topline"><span>01</span><i class="fa-solid fa-sparkles" aria-hidden="true"></i></div>
+                        <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
+                        <h3>Personalised profile discovery</h3>
+                        <p>Explore bride and groom profiles and search by name to start discovering people who may fit the future you have in mind.</p>
+                        <div class="card-links">
+                            <a href="{% url 'bride' %}">Browse brides <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                            <a href="{% url 'groom' %}">Browse grooms <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="service-card" data-reveal>
+                        <div class="card-topline"><span>02</span><i class="fa-solid fa-user-pen" aria-hidden="true"></i></div>
+                        <div class="service-icon"><i class="fa-solid fa-id-card" aria-hidden="true"></i></div>
+                        <h3>A profile that feels like you</h3>
+                        <p>Share the details, values, and aspirations that help others see the person behind the first impression.</p>
+                        <a class="card-link" href="{% url 'signup' %}">Start your profile <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </article>
+
+                    <article class="service-card" data-reveal>
+                        <div class="card-topline"><span>03</span><i class="fa-solid fa-shield-heart" aria-hidden="true"></i></div>
+                        <div class="service-icon"><i class="fa-solid fa-user-lock" aria-hidden="true"></i></div>
+                        <h3>A more considered experience</h3>
+                        <p>Take time to review profiles, choose who to connect with, and move forward at a pace that feels right for you.</p>
+                        <a class="card-link" href="{% url 'contact' %}">Get in touch <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </article>
+
+                    <article class="service-card" data-reveal>
+                        <div class="card-topline"><span>04</span><i class="fa-solid fa-gem" aria-hidden="true"></i></div>
+                        <div class="service-icon"><i class="fa-solid fa-crown" aria-hidden="true"></i></div>
+                        <h3>Membership options</h3>
+                        <p>Find the membership plan that suits the way you want to use ShreeVivah and explore your next steps.</p>
+                        <a class="card-link" href="{% url 'plans' %}">Explore plans <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </article>
+
+                    <article class="service-card" data-reveal>
+                        <div class="card-topline"><span>05</span><i class="fa-solid fa-images" aria-hidden="true"></i></div>
+                        <div class="service-icon"><i class="fa-solid fa-camera-retro" aria-hidden="true"></i></div>
+                        <h3>Wedding inspiration</h3>
+                        <p>Explore real wedding moments and creative ideas that celebrate the traditions and stories behind every union.</p>
+                        <a class="card-link" href="{% url 'work' %}">Visit the gallery <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </article>
+
+                    <article class="service-card service-card-quote" data-reveal>
+                        <span class="quote-mark" aria-hidden="true">“</span>
+                        <p>Good matchmaking makes space for both a meaningful introduction and a decision that is truly your own.</p>
+                        <span class="quote-caption">The ShreeVivah approach</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="journey-section">
+            <div class="container journey-layout">
+                <div class="journey-heading" data-reveal>
+                    <p class="eyebrow"><span></span> Your journey</p>
+                    <h2>From hello<br>to <em>happily ever after.</em></h2>
+                    <p>Take each step with intention. You set the pace; we make the experience easier to navigate.</p>
+                    <a href="{% url 'signup' %}" class="button button-outline">Begin your journey <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+                <div class="journey-steps">
+                    <article class="journey-step" data-reveal>
+                        <span class="step-number">01</span>
+                        <div><h3>Introduce yourself</h3><p>Create a profile that reflects your story and what matters to you.</p></div>
+                        <i class="fa-solid fa-arrow-right step-arrow" aria-hidden="true"></i>
+                    </article>
+                    <article class="journey-step" data-reveal>
+                        <span class="step-number">02</span>
+                        <div><h3>Explore profiles</h3><p>Browse profiles and discover people with shared intentions.</p></div>
+                        <i class="fa-solid fa-arrow-right step-arrow" aria-hidden="true"></i>
+                    </article>
+                    <article class="journey-step" data-reveal>
+                        <span class="step-number">03</span>
+                        <div><h3>Choose your next step</h3><p>Connect when you feel ready and let the conversation unfold.</p></div>
+                        <i class="fa-solid fa-arrow-right step-arrow" aria-hidden="true"></i>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="closing-section">
+            <div class="container" data-reveal>
+                <div class="closing-card">
+                    <div class="closing-copy">
+                        <p class="eyebrow"><span></span> Your story starts here</p>
+                        <h2>Ready for a more meaningful <em>beginning?</em></h2>
+                        <p>Create your profile and take the first step towards a connection built on what matters to you.</p>
+                    </div>
+                    <a href="{% url 'signup' %}" class="button button-gold">Join ShreeVivah <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    <span class="closing-ornament" aria-hidden="true"><i class="fa-solid fa-heart"></i></span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="{% static 'works/js/services.js' %}" defer></script>
+    {% include "main/footer.html" %}
+</body>
+</html>

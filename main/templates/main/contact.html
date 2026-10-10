@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact ShreeVivah</title>
+  <link rel="stylesheet" href="{% static 'main/css/contact.css' %}?v=2" />
+</head>
+
+<body class="contact-page">
+  {% include "main/navbar.html" %}
+  <main class="contact-content">
+    <div class="contact-layout">
+      <section class="contact-panel" aria-labelledby="contact-heading">
+        <div class="contact-panel-content">
+          <p class="contact-eyebrow"><span></span> Here when you need us</p>
+          <h1 id="contact-heading">Let’s start a<br><em>conversation.</em></h1>
+          <p class="contact-intro">Questions about your account or finding your way around ShreeVivah? Reach out to our team—we’re happy to help.</p>
+
+          <div class="contact-details">
+            <a class="contact-detail" href="mailto:support@shreevivah.com">
+              <span class="contact-detail-icon" aria-hidden="true"><i class="fa-regular fa-envelope"></i></span>
+              <span><small>Email us</small><strong>support@shreevivah.com</strong></span>
+              <i class="fa-solid fa-arrow-up-right-from-square contact-detail-arrow" aria-hidden="true"></i>
+            </a>
+            <a class="contact-detail" href="tel:+919876543210">
+              <span class="contact-detail-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></span>
+              <span><small>Call us</small><strong>+91 9876543210</strong></span>
+              <i class="fa-solid fa-arrow-up-right-from-square contact-detail-arrow" aria-hidden="true"></i>
+            </a>
+            <div class="contact-detail">
+              <span class="contact-detail-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></span>
+              <span><small>Find us</small><strong>Kolkata, West Bengal</strong></span>
+            </div>
+          </div>
+
+          <p class="contact-note"><i class="fa-solid fa-heart" aria-hidden="true"></i> A thoughtful connection starts with feeling supported.</p>
+        </div>
+      </section>
+
+      <section class="contact-form-panel" aria-labelledby="form-heading">
+        <div class="form-heading">
+          <p class="form-kicker">SEND A MESSAGE</p>
+          <h2 id="form-heading">How can we help?</h2>
+          <p>Share a few details and tell us what’s on your mind.</p>
+        </div>
+        <form id="contact-form" method="POST">
+          {% csrf_token %}
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" autocomplete="name" required />
+            </div>
+
+            <div class="form-field">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="phone">Phone number <span>(optional)</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="+91" autocomplete="tel" />
+          </div>
+
+          <div class="form-field">
+            <label for="message">Your message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help..." required></textarea>
+          </div>
+
+          <button type="submit">Send message <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+          <p class="form-privacy"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Prefer direct contact? Use the email or phone details beside this form.</p>
+        </form>
+      </section>
+    </div>
+  </main>
+  {% include "main/footer.html" %}
+</body>
+
+</html>

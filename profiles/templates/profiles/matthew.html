@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matthew Davis - Full Profile</title>
+  <link rel="stylesheet" href="{% static 'profiles/css/user.css' %}?v=2" />
+</head>
+
+<body>
+  {% include "main/navbar.html" %}
+  <div class="profile-container">
+    <div class="profile-card">
+            <!-- 🔙 Back Button -->
+      <div class="back-btn" onclick="history.back()">Back</div>
+      <div class="profile-image">
+        <img src="{% static 'profiles/images/Matthew .jpeg' %}" alt="Matthew Davis" />
+      </div>
+      <div class="profile-details">
+        <h1>Matthew Davis</h1>
+        <p><strong>Profession:</strong> Software Engineer</p>
+        <p><strong>Location:</strong> Bengaluru, India</p>
+        <p><strong>About Myself:</strong> I'm a passionate software engineer who loves building smart applications. In my free time, I enjoy cycling and trekking in nature.</p>
+        <p><strong>Expectations:</strong> Looking for a partner who is kind-hearted, values honesty, and enjoys simple joys of life.</p>
+        <p><strong>Family Details:</strong> We are a close-knit family of four. My father is a retired professor and mother is a homemaker. I have one younger sister studying medicine.</p>
+      </div>
+      </div>
+    </div>
+  </div>
+  {% include "main/footer.html" %}
+</body>
+
+</html>

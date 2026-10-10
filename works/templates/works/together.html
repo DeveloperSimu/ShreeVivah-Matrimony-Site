@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Celebrate the milestones, quiet moments, and memories that make a life together.">
+  <title>Growing Old Together | ShreeVivah</title>
+  <link rel="stylesheet" href="{% static 'works/css/together.css' %}">
+</head>
+<body>
+  {% include "main/navbar.html" %}
+  <main class="together-page">
+    <header class="together-hero">
+      <div class="hero-image hero-image-one" aria-hidden="true"></div>
+      <div class="hero-image hero-image-two" aria-hidden="true"></div>
+      <div class="hero-shade"></div>
+      <div class="together-container hero-content">
+        <p class="together-eyebrow"><span></span> A lifetime, side by side</p>
+        <h1>Growing old<br><em>together.</em></h1>
+        <p class="hero-subtitle">Not one grand gesture, but a thousand little moments—held close, lived fully, and shared with the person who feels like home.</p>
+        <div class="hero-actions">
+          <a class="together-button button-gold" href="#journey">Walk through the years <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+          <a class="hero-link" href="#memories">See the memories <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="hero-caption"><span>Love · Laughter · A lifetime</span><span>ShreeVivah stories</span></div>
+      </div>
+      <span class="hero-mark" aria-hidden="true">∞</span>
+    </header>
+
+    <section class="journey-section" id="journey">
+      <div class="together-container">
+        <div class="section-heading">
+          <div>
+            <p class="together-eyebrow eyebrow-dark"><span></span> The years between “I do” and always</p>
+            <h2>A beautiful life<br>is made <em>one day at a time.</em></h2>
+          </div>
+          <p>Every relationship writes its own story. These are some of the moments that become part of a life built together.</p>
+        </div>
+        <div class="journey-list">
+          <article class="journey-item">
+            <span class="journey-number">01</span>
+            <span class="journey-symbol" aria-hidden="true"><i class="fa-regular fa-face-smile"></i></span>
+            <div><h3>The beginning</h3><p>A first hello, an unexpected conversation, and the feeling that there might be something more.</p></div>
+            <span class="journey-note">A chance encounter</span>
+          </article>
+          <article class="journey-item">
+            <span class="journey-number">02</span>
+            <span class="journey-symbol" aria-hidden="true"><i class="fa-regular fa-gem"></i></span>
+            <div><h3>The promise</h3><p>Two people choose each other, making a promise surrounded by the people who know them best.</p></div>
+            <span class="journey-note">A shared yes</span>
+          </article>
+          <article class="journey-item">
+            <span class="journey-number">03</span>
+            <span class="journey-symbol" aria-hidden="true"><i class="fa-solid fa-heart"></i></span>
+            <div><h3>The wedding day</h3><p>Traditions, joyful chaos, and a new chapter beginning with family close by.</p></div>
+            <span class="journey-note">The start of always</span>
+          </article>
+          <article class="journey-item">
+            <span class="journey-number">04</span>
+            <span class="journey-symbol" aria-hidden="true"><i class="fa-solid fa-house"></i></span>
+            <div><h3>The everyday magic</h3><p>A home shaped together, small rituals, shared plans, and the comfort of an ordinary day.</p></div>
+            <span class="journey-note">Life, side by side</span>
+          </article>
+          <article class="journey-item">
+            <span class="journey-number">05</span>
+            <span class="journey-symbol" aria-hidden="true"><i class="fa-solid fa-seedling"></i></span>
+            <div><h3>All that comes after</h3><p>New places, new milestones, and a love that keeps finding ways to grow.</p></div>
+            <span class="journey-note">Still choosing you</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="memory-section" id="memories">
+      <div class="together-container">
+        <div class="section-heading memory-heading">
+          <div>
+            <p class="together-eyebrow eyebrow-dark"><span></span> Moments worth keeping</p>
+            <h2>Every chapter has<br>its own <em>kind of magic.</em></h2>
+          </div>
+          <p>Take a look through the little scenes and big milestones that make a shared life unforgettable.</p>
+        </div>
+
+        <section class="memory-collection">
+          <div class="collection-heading"><span>Chapter 01</span><h3>Where it all began</h3><p>Friendship, discovery, and the first pages of a story.</p></div>
+          <div class="memory-grid memory-grid-five">
+            <button class="memory-photo memory-photo-large" type="button" aria-label="View college memory 1"><img src="{% static 'works/images/together/c/c1.jpeg' %}" alt="A memory from the couple's college days" loading="lazy"></button>
+            <button class="memory-photo" type="button" aria-label="View college memory 2"><img src="{% static 'works/images/together/c/c2.jpeg' %}" alt="A joyful college memory together" loading="lazy"></button>
+            <button class="memory-photo" type="button" aria-label="View college memory 3"><img src="{% static 'works/images/together/c/c3.jpeg' %}" alt="A moment from the couple's early days" loading="lazy"></button>
+            <button class="memory-photo" type="button" aria-label="View college memory 4"><img src="{% static 'works/images/together/c/c4.jpeg' %}" alt="A college journey memory" loading="lazy"></button>
+            <button class="memory-photo" type="button" aria-label="View college memory 5"><img src="{% static 'works/images/together/c/c5.jpeg' %}" alt="A shared memory from college" loading="lazy"></button>
+          </div>
+        </section>
+
+        <section class="memory-collection">
+          <div class="collection-heading"><span>Chapter 02</span><h3>The promise</h3><p>A new beginning, celebrated with the people they love.</p></div>
+          <div class="memory-grid memory-grid-five">
+            <button class="memory-photo memory-photo-large" type="button" aria-label="View engagement memory 1"><img src="{% static 'works/images/together/e/e1.jpeg' %}" alt="A special engagement moment" loading="lazy"></button>
+            <button class="memory-photo" type="button" aria-label="View engagement memory 2"><img src="{% static 'works/images/together/e/e2.jpeg' %}" alt="The couple celebrating their engagement" loading="lazy"></button>
+            <button class="memory-photo" type="button" aria-label="View engagement memory 3"><img src="{% static 'works/images/together/e/e3.jpeg' %}" alt="A joyful engagement celebration" loading="lazy"></button>
+            <button class="memory-photo" type="button" aria-label="View engagement memory 4"><img src="{% static 'works/images/together/e/e4.jpeg' %}" alt="A tender moment from the engagement" loading="lazy"></button>
+            <button class="memory-photo" type="button" aria-label="View engagement memory 5"><img src="{% static 'works/images/together/e/e5.jpeg' %}" alt="The couple surrounded by engagement blessings" loading="lazy"></button>
+          </div>
+        </section>
+
+        <section class="memory-collection">
+          <div class="collection-heading"><span>Chapter 03</span><h3>Side by side</h3><p>In all the little ways, through every kind of day.</p></div>
+          <div class="memory-grid memory-grid-five">
+            <button class="memory-photo memory-photo-large" type="button" aria-label="View hand in hand memory 1"><img src="{% static 'works/images/together/h/hih1.jpeg' %}" alt="The couple walking hand in hand" loading="lazy"></button>
+            <button class="memory-photo" type="button" aria-label="View hand in hand memory 2"><img src="{% static 'works/images/together/h/hih2.jpeg' %}" alt="A quiet moment together" loading="lazy"></button>
+            <button class="memory-photo" type="button" aria-label="View hand in hand memory 3"><img src="{% static 'works/images/together/h/hih3.jpeg' %}" alt="The couple sharing an everyday moment" loading="lazy"></button>
+            <button class="memory-photo" type="button" aria-label="View hand in hand memory 4"><img src="{% static 'works/images/together/h/hih4.jpeg' %}" alt="A memory of the couple side by side" loading="lazy"></button>
+            <button class="memory-photo" type="button" aria-label="View hand in hand memory 5"><img src="{% static 'works/images/together/h/hih5.jpeg' %}" alt="A shared journey hand in hand" loading="lazy"></button>
+          </div>
+        </section>
+
+        <section class="memory-collection">
+          <div class="collection-heading"><span>Chapter 04</span><h3>Another year, another reason to celebrate</h3><p>Honouring the journey, and all the years still to come.</p></div>
+          <div class="memory-grid memory-grid-five">
+            <button class="memory-photo memory-photo-large" type="button" aria-label="View anniversary memory 1"><img src="{% static 'works/images/together/a/a1.jpeg' %}" alt="A couple celebrating an anniversary" loading="lazy"></button>
+            <button class="memory-photo" type="button" aria-label="View anniversary memory 2"><img src="{% static 'works/images/together/a/a2.jpeg' %}" alt="A warm anniversary celebration" loading="lazy"></button>
+            <button class="memory-photo" type="button" aria-label="View anniversary memory 3"><img src="{% static 'works/images/together/a/a3.jpeg' %}" alt="A cherished anniversary memory" loading="lazy"></button>
+            <button class="memory-photo" type="button" aria-label="View anniversary memory 4"><img src="{% static 'works/images/together/a/a4.jpeg' %}" alt="Celebrating another year together" loading="lazy"></button>
+            <button class="memory-photo" type="button" aria-label="View anniversary memory 5"><img src="{% static 'works/images/together/a/a5.jpeg' %}" alt="A couple celebrating their life together" loading="lazy"></button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <dialog class="memory-lightbox" aria-label="Memory photo viewer">
+      <button class="lightbox-close" type="button" aria-label="Close photo">&times;</button>
+      <img class="lightbox-image" alt="">
+      <p class="lightbox-caption"></p>
+    </dialog>
+
+    <section class="together-closing">
+      <div class="together-container closing-panel">
+        <div>
+          <p class="together-eyebrow"><span></span> The best is still ahead</p>
+          <h2>Here’s to a lifetime<br>of <em>finding home in each other.</em></h2>
+          <p>Every love story is different. We’d love to help you begin yours.</p>
+        </div>
+        <a class="together-button button-gold" href="{% url 'firstlook' %}">Explore more love stories <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        <span class="closing-mark" aria-hidden="true">∞</span>
+      </div>
+    </section>
+  </main>
+  {% include "main/footer.html" %}
+  <script src="{% static 'works/js/together.js' %}" defer></script>
+</body>
+</html>

@@ -1,0 +1,449 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  max-width: 100%;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+input,
+select,
+textarea,
+button {
+  max-width: 100%;
+}
+
+@media (max-width: 900px) {
+  html body .main-header {
+    height: auto;
+    min-height: 70px;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    padding: 10px 16px;
+  }
+
+  html body .center-logo {
+    position: static;
+    left: auto;
+    transform: none;
+    margin-left: 56px;
+  }
+
+  html body .top-nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin-left: 0;
+  }
+
+  html body .sidebar {
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+
+  html body .hero {
+    padding: 130px 18px 100px;
+  }
+
+  html body .hero h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    line-height: 1.2;
+  }
+
+  html body .hero p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.6;
+  }
+
+  html body .search-bar {
+    width: min(100%, 440px);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  html body .search-bar input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  html body .option-card {
+    width: min(100%, 300px);
+  }
+
+  html body .wc-grid,
+  html body .gallery-grid,
+  html body .pkg-grid,
+  html body .haldi-rituals,
+  html body .ritual-cards,
+  html body .cards,
+  html body .cards-alt,
+  html body .grid,
+  html body .gallery-container,
+  html body .packages-container,
+  html body .services-grid .container {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  }
+
+  html body .bride-page,
+  html body .groom-page,
+  html body .profile-container,
+  html body .our-works,
+  html body .hih-wrap,
+  html body .container,
+  html body .container-alt,
+  html body .gallery-section,
+  html body .services-section,
+  html body .haldi-intro {
+    width: min(100% - 32px, 1200px);
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  html body .profile-container,
+  html body .profile-card {
+    min-width: 0;
+  }
+
+  html body .bride-card,
+  html body .groom-card {
+    width: 100%;
+  }
+
+  html body .timeline,
+  html body .timeline-container,
+  html body .haldi-timeline {
+    max-width: 100%;
+  }
+
+  html body .timeline-item,
+  html body .timeline-step {
+    max-width: 100%;
+  }
+
+  html body .sacred-hero,
+  html body .haldi-hero,
+  html body .hih-hero {
+    min-height: 52vh;
+    max-height: 680px;
+  }
+
+  html body .svc-card .svc-more {
+    position: static;
+    display: inline-block;
+    margin-top: 12px;
+  }
+
+  html body .test-card {
+    min-width: 0;
+    flex: 1 1 280px;
+  }
+}
+
+@media (max-width: 600px) {
+  html body {
+    height: auto;
+    min-height: 100vh;
+    overflow-x: clip;
+  }
+
+  html body .container {
+    flex-direction: column;
+  }
+
+  html body .main-header {
+    padding: 10px 12px;
+  }
+
+  html body .center-logo img {
+    height: 38px;
+  }
+
+  html body .center-logo span {
+    font-size: 1.2rem;
+  }
+
+  html body .top-nav {
+    gap: 8px 12px;
+  }
+
+  html body .top-nav a {
+    font-size: 0.9rem;
+  }
+
+  html body .hero {
+    padding: 120px 16px 80px;
+  }
+
+  html body .hero-title,
+  html body .hero h1,
+  html body .services-hero h1,
+  html body .haldi-title,
+  html body .section-title {
+    font-size: clamp(1.65rem, 8vw, 2.5rem);
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+
+  html body .hero-subtitle,
+  html body .haldi-desc,
+  html body .details-paragraph {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  html body .search-bar {
+    gap: 0;
+  }
+
+  html body .search-bar input {
+    font-size: 0.95rem;
+  }
+
+  html body .bride-page,
+  html body .groom-page,
+  html body .profile-container,
+  html body .our-works,
+  html body .hih-wrap,
+  html body .container,
+  html body .container-alt,
+  html body .gallery-section,
+  html body .services-section,
+  html body .haldi-intro {
+    width: min(100% - 24px, 1200px);
+  }
+
+  html body .bride-title,
+  html body .groom-title {
+    display: block;
+    font-size: clamp(2rem, 10vw, 3rem);
+    margin-top: 88px;
+    letter-spacing: 1px;
+    overflow-wrap: anywhere;
+  }
+
+  html body .top-bar {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px 12px;
+  }
+
+  html body .top-bar a {
+    margin: 0;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  html body .bride-card,
+  html body .groom-card,
+  html body .profile-container,
+  html body .profile-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  html body .bride-card,
+  html body .groom-card {
+    text-align: center;
+  }
+
+  html body .bride-photo img,
+  html body .groom-photo img {
+    max-width: min(180px, 60vw);
+    height: auto;
+  }
+
+  html body .profile-card {
+    padding: 52px 18px 22px;
+    text-align: center;
+  }
+
+  html body .profile-image {
+    width: min(210px, 58vw);
+    margin: 0 auto;
+  }
+
+  html body .contact-btn,
+  html body .btn-primary,
+  html body .btn-brand {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  html body .footer-container {
+    gap: 14px;
+  }
+
+  html body .success-bg,
+  html body .haldi-details,
+  html body .haldi-intro,
+  html body .testimonials,
+  html body .gallery-section,
+  html body .extras-section {
+    padding: 28px 14px;
+  }
+
+  html body .overlay {
+    padding: 20px 14px;
+  }
+
+  html body .story-card {
+    min-height: 0;
+  }
+
+  html body .story-card img {
+    height: min(78vw, 360px);
+  }
+
+  html body .package-card,
+  html body .pkg-card,
+  html body .haldi-card,
+  html body .styled-card,
+  html body .styled-card-2,
+  html body .styled-card-3,
+  html body .styled-card-4,
+  html body .ritual-card,
+  html body .gallery-card,
+  html body .couple-card,
+  html body .feature-card,
+  html body .card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  html body .card-row,
+  html body .couples,
+  html body .gender-options,
+  html body .success-profiles,
+  html body .test-row,
+  html body .actions,
+  html body .filters,
+  html body .chip-grid,
+  html body .chip-list {
+    flex-wrap: wrap;
+  }
+
+  html body .review-form,
+  html body .booking-form,
+  html body .right-panel,
+  html body .left-panel {
+    width: 100%;
+    min-width: 0;
+  }
+
+  html body .review-form form,
+  html body .booking-form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  html body .review-form input,
+  html body .review-form select,
+  html body .review-form textarea,
+  html body .booking-form input,
+  html body .booking-form select,
+  html body .booking-form textarea {
+    width: 100%;
+    min-width: 0;
+  }
+
+  html body .modal-content {
+    width: calc(100% - 28px);
+    max-width: 600px;
+    margin: 14px;
+    padding: 20px;
+  }
+
+  html body .timeline::before {
+    left: 8px;
+  }
+
+  html body .timeline-item,
+  html body .timeline-step {
+    width: 100%;
+    left: 0;
+    padding-right: 8px;
+    padding-left: 28px;
+    text-align: left;
+  }
+
+  html body .timeline-item .icon,
+  html body .timeline-step .step-icon {
+    left: 0;
+  }
+
+  html body .growing-old {
+    padding: 32px 14px;
+  }
+
+  html body .about {
+    width: 100%;
+    max-width: 100%;
+    padding: 28px 18px;
+  }
+
+  html body .contact-page,
+  html body .contact-container {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  html body .search-results {
+    width: min(100% - 24px, 1100px);
+    margin: 24px auto;
+    padding: 18px;
+  }
+
+  html body .profile-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: 18px;
+  }
+
+  html body .search-results .profile-card {
+    padding: 16px;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 420px) {
+  html body .center-logo {
+    margin-left: 46px;
+  }
+
+  html body .menu-toggle {
+    left: 8px;
+    padding: 8px;
+  }
+
+  html body .top-nav {
+    gap: 8px 10px;
+  }
+
+  html body .top-nav a {
+    font-size: 0.82rem;
+  }
+
+  html body .search-bar {
+    width: 100%;
+  }
+
+  html body .story-card img {
+    height: 76vw;
+  }
+}

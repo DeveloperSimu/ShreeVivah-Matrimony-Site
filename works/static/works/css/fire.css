@@ -1,0 +1,704 @@
+@import url("../../responsive.css");
+
+:root {
+    --fire-ink: #28211e;
+    --fire-muted: #766c64;
+    --fire-paper: #faf7f1;
+    --fire-white: #fffdf9;
+    --fire-gold: #dfbd7d;
+    --fire-gold-dark: #a87531;
+    --fire-wine: #603b3a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    color: var(--fire-ink);
+    background: var(--fire-paper);
+    font-family: "Segoe UI", Inter, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.fire-container {
+    width: min(1180px, calc(100% - 56px));
+    margin-inline: auto;
+}
+
+.sacred-hero {
+    position: relative;
+    display: flex;
+    min-height: clamp(560px, 72vh, 700px);
+    align-items: center;
+    overflow: hidden;
+    isolation: isolate;
+    color: #fffaf0;
+    background: #271d19;
+}
+
+.hero-video,
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-video {
+    z-index: -2;
+    object-fit: cover;
+    object-position: center 52%;
+}
+
+.hero-overlay {
+    z-index: -1;
+    background:
+        radial-gradient(ellipse at 77% 46%, rgba(173, 86, 38, .16), transparent 38%),
+        linear-gradient(90deg, rgba(28, 21, 18, .86), rgba(28, 21, 18, .61) 48%, rgba(28, 21, 18, .12)),
+        linear-gradient(0deg, rgba(28, 21, 18, .54), transparent 42%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding-top: 85px;
+    padding-bottom: 110px;
+}
+
+.fire-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 21px;
+    color: var(--fire-gold);
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .19em;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.fire-eyebrow span {
+    width: 29px;
+    height: 1px;
+    background: currentColor;
+}
+
+.hero-title,
+.intro-layout h2,
+.section-heading h2,
+.vow-heading h2,
+.closing-panel h2 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    letter-spacing: -.045em;
+    line-height: 1.08;
+}
+
+.hero-title {
+    max-width: 850px;
+    font-size: clamp(3.45rem, 7.4vw, 7rem);
+}
+
+.hero-title em,
+.intro-layout h2 em,
+.section-heading h2 em,
+.vow-heading h2 em,
+.closing-panel h2 em {
+    color: var(--fire-gold);
+    font-weight: 400;
+}
+
+.hero-subtitle {
+    max-width: 545px;
+    margin: 25px 0 0;
+    color: rgba(255, 250, 240, .8);
+    font-size: .99rem;
+    line-height: 1.85;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 34px;
+}
+
+.fire-button {
+    display: inline-flex;
+    min-height: 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    padding: 0 20px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    font-family: inherit;
+    font-size: .77rem;
+    font-weight: 700;
+    letter-spacing: .035em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.fire-button:hover {
+    transform: translateY(-2px);
+}
+
+.button-gold {
+    color: #2b241e;
+    background: var(--fire-gold);
+}
+
+.button-gold:hover {
+    background: #f0d49c;
+}
+
+.hero-text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #fffaf0;
+    font-size: .82rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.hero-text-link i,
+.fire-button i {
+    transition: transform .2s ease;
+}
+
+.hero-text-link:hover i,
+.fire-button:hover i {
+    transform: translateX(4px);
+}
+
+.hero-caption {
+    position: absolute;
+    right: 0;
+    bottom: 34px;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 250, 240, .3);
+    color: rgba(255, 250, 240, .73);
+    font-size: .64rem;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+}
+
+.hero-ornament {
+    position: absolute;
+    right: 7%;
+    bottom: -80px;
+    color: rgba(255, 255, 255, .07);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(9rem, 23vw, 23rem);
+    line-height: 1;
+    pointer-events: none;
+}
+
+.fire-intro {
+    padding: 112px 0 118px;
+    background: var(--fire-white);
+}
+
+.intro-layout {
+    display: grid;
+    grid-template-columns: 1fr .82fr;
+    align-items: center;
+    gap: 10%;
+}
+
+.eyebrow-dark {
+    color: var(--fire-gold-dark);
+}
+
+.intro-layout h2,
+.section-heading h2,
+.vow-heading h2,
+.closing-panel h2 {
+    font-size: clamp(2.8rem, 5vw, 4.7rem);
+}
+
+.intro-layout h2 em,
+.section-heading h2 em {
+    color: var(--fire-wine);
+}
+
+.intro-copy {
+    max-width: 535px;
+    color: var(--fire-muted);
+    font-size: .96rem;
+    line-height: 1.9;
+}
+
+.intro-copy p {
+    margin: 0 0 15px;
+}
+
+.intro-copy p:last-child {
+    margin-bottom: 0;
+}
+
+.ritual-section {
+    padding: 112px 0 120px;
+    background:
+        radial-gradient(ellipse at 12% 10%, rgba(201, 149, 66, .09), transparent 31%),
+        var(--fire-paper);
+}
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 38px;
+    margin-bottom: 43px;
+}
+
+.section-heading > p {
+    max-width: 355px;
+    margin: 0 0 7px;
+    color: var(--fire-muted);
+    font-size: .9rem;
+    line-height: 1.8;
+}
+
+.ritual-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 485px;
+    gap: 17px;
+}
+
+.ritual-card {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+    background: #504038;
+}
+
+.ritual-card-featured {
+    grid-row: span 1;
+}
+
+.ritual-card::after {
+    position: absolute;
+    inset: 15% 0 0;
+    background: linear-gradient(0deg, rgba(22, 17, 14, .91), rgba(22, 17, 14, .08) 74%, transparent);
+    content: "";
+    pointer-events: none;
+}
+
+.ritual-card > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .65s cubic-bezier(.2, .65, .3, 1);
+}
+
+.ritual-card:hover > img {
+    transform: scale(1.045);
+}
+
+.ritual-caption {
+    position: absolute;
+    z-index: 1;
+    right: 23px;
+    bottom: 23px;
+    left: 23px;
+    color: #fffaf0;
+}
+
+.ritual-caption > span {
+    color: var(--fire-gold);
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+}
+
+.ritual-caption h3 {
+    margin: 10px 0 8px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.ritual-caption > p {
+    max-width: 300px;
+    margin: 0 0 19px;
+    color: rgba(255, 250, 240, .76);
+    font-size: .83rem;
+    line-height: 1.65;
+}
+
+.button-light {
+    min-height: 42px;
+    padding-inline: 14px;
+    color: #fffaf0;
+    border-color: rgba(255, 250, 240, .55);
+    background: rgba(36, 28, 24, .35);
+    font-size: .68rem;
+}
+
+.button-light:hover {
+    color: #2b241e;
+    border-color: var(--fire-gold);
+    background: var(--fire-gold);
+}
+
+.fire-dialog {
+    position: fixed;
+    inset: 0;
+    width: min(92vw, 560px);
+    max-width: none;
+    max-height: calc(100dvh - 32px);
+    margin: auto;
+    padding: 45px;
+    overflow: auto;
+    border: 1px solid rgba(201, 149, 66, .45);
+    color: var(--fire-ink);
+    background: var(--fire-white);
+    box-shadow: 0 24px 90px rgba(0, 0, 0, .4);
+}
+
+.fire-dialog::backdrop {
+    background: rgba(18, 15, 13, .82);
+    backdrop-filter: blur(6px);
+}
+
+.fire-dialog .fire-eyebrow {
+    max-width: calc(100% - 50px);
+    font-size: .6rem;
+}
+
+.fire-dialog h2 {
+    margin: 0 0 14px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 7vw, 3rem);
+    font-weight: 400;
+}
+
+.fire-dialog-copy {
+    margin: 0;
+    color: var(--fire-muted);
+    font-size: .95rem;
+    line-height: 1.85;
+}
+
+.fire-dialog-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border: 1px solid rgba(96, 59, 58, .28);
+    border-radius: 50%;
+    color: #fffaf0;
+    background: var(--fire-wine);
+    font-size: 1.65rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.fire-dialog-close:hover,
+.fire-dialog-close:focus-visible {
+    background: #81504d;
+}
+
+.vow-section {
+    padding: 112px 0;
+    color: #fffaf0;
+    background:
+        radial-gradient(ellipse at 85% 12%, rgba(201, 149, 66, .15), transparent 33%),
+        #302925;
+}
+
+.vow-layout {
+    display: grid;
+    grid-template-columns: .9fr 1fr;
+    gap: 12%;
+}
+
+.vow-heading > p:not(.fire-eyebrow) {
+    max-width: 430px;
+    margin: 22px 0 28px;
+    color: rgba(255, 250, 240, .7);
+    font-size: .92rem;
+    line-height: 1.85;
+}
+
+.button-outline {
+    color: #fffaf0;
+    border-color: rgba(255, 250, 240, .48);
+}
+
+.button-outline:hover {
+    color: #302925;
+    border-color: var(--fire-gold);
+    background: var(--fire-gold);
+}
+
+.vow-list {
+    border-top: 1px solid rgba(255, 250, 240, .22);
+}
+
+.vow-item {
+    display: grid;
+    grid-template-columns: 43px 1fr;
+    gap: 16px;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(255, 250, 240, .22);
+}
+
+.vow-item > span {
+    padding-top: 3px;
+    color: var(--fire-gold);
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+}
+
+.vow-item h3 {
+    margin: 0 0 7px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.vow-item p {
+    max-width: 440px;
+    margin: 0;
+    color: rgba(255, 250, 240, .68);
+    font-size: .85rem;
+    line-height: 1.75;
+}
+
+.fire-closing {
+    padding: 96px 0;
+    background: var(--fire-white);
+}
+
+.closing-panel {
+    position: relative;
+    display: flex;
+    min-height: 300px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    overflow: hidden;
+    padding: 52px 62px;
+    color: #fffaf0;
+    background:
+        radial-gradient(ellipse at 95% 15%, rgba(223, 189, 125, .26), transparent 31%),
+        var(--fire-wine);
+}
+
+.closing-panel .fire-eyebrow {
+    color: var(--fire-gold);
+}
+
+.closing-panel h2 {
+    position: relative;
+    z-index: 1;
+    font-size: clamp(2.5rem, 4.4vw, 4rem);
+}
+
+.closing-panel > div > p:last-child {
+    position: relative;
+    z-index: 1;
+    margin: 16px 0 0;
+    color: rgba(255, 250, 240, .73);
+    font-size: .88rem;
+}
+
+.closing-panel > .fire-button {
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+.closing-ornament {
+    position: absolute;
+    right: 24%;
+    bottom: -130px;
+    color: rgba(255, 255, 255, .07);
+    font-size: 24rem;
+    line-height: 1;
+}
+
+.fire-button:focus-visible,
+.hero-text-link:focus-visible {
+    outline: 3px solid var(--fire-gold);
+    outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+    .fire-container {
+        width: min(100% - 40px, 700px);
+    }
+
+    .sacred-hero {
+        min-height: 720px;
+    }
+
+    .hero-content {
+        padding-top: 85px;
+        padding-bottom: 110px;
+    }
+
+    .hero-title {
+        font-size: clamp(3.2rem, 7vw, 5rem);
+    }
+
+    .intro-layout,
+    .vow-layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .ritual-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 420px;
+    }
+
+    .ritual-card-featured {
+        grid-column: span 2;
+    }
+
+    .closing-panel {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 44px 38px;
+    }
+}
+
+@media (max-width: 560px) {
+    .fire-container {
+        width: calc(100% - 36px);
+    }
+
+    .sacred-hero {
+        min-height: 690px;
+    }
+
+    .hero-content {
+        padding-top: 68px;
+        padding-bottom: 112px;
+    }
+
+    .hero-title {
+        font-size: clamp(3rem, 13vw, 4.4rem);
+    }
+
+    .hero-subtitle {
+        font-size: .92rem;
+    }
+
+    .hero-actions {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .hero-caption {
+        font-size: .54rem;
+        letter-spacing: .07em;
+    }
+
+    .hero-ornament {
+        right: -5%;
+        bottom: -46px;
+        font-size: 11rem;
+    }
+
+    .fire-intro,
+    .ritual-section,
+    .vow-section {
+        padding: 76px 0;
+    }
+
+    .intro-layout h2,
+    .section-heading h2,
+    .vow-heading h2 {
+        font-size: clamp(2.6rem, 12vw, 3.5rem);
+    }
+
+    .ritual-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 430px;
+        gap: 12px;
+    }
+
+    .ritual-card-featured {
+        grid-column: auto;
+    }
+
+    .ritual-caption {
+        right: 19px;
+        bottom: 19px;
+        left: 19px;
+    }
+
+    .fire-dialog {
+        width: calc(100vw - 28px);
+        padding: 49px 24px 27px;
+    }
+
+    .fire-dialog-close {
+        top: 8px;
+        right: 8px;
+    }
+
+    .fire-dialog .fire-eyebrow {
+        max-width: calc(100% - 42px);
+        font-size: .55rem;
+    }
+
+    .fire-closing {
+        padding: 62px 0;
+    }
+
+    .closing-panel {
+        padding: 37px 23px;
+    }
+
+    .closing-panel h2 {
+        font-size: 2.6rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: .01ms !important;
+    }
+}

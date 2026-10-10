@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Special Services Packages</title>
+  <link rel="stylesheet" href="{% static 'works/css/plans.css' %}" />
+</head>
+<body>
+  {% include "main/navbar.html" %}
+  <main class="services-section">
+    <header class="plans-heading">
+      <p class="plans-eyebrow">Membership plans</p>
+      <h1>Choose the support that fits your journey</h1>
+      <p class="plans-intro">Flexible guidance and matchmaking support for every step toward finding your partner.</p>
+    </header>
+    <div class="packages-container">
+      <div class="package-card basic">
+        <p class="package-label">A simple start</p>
+        <h3>Basic Package</h3>
+        <p class="package-description">Get the essential guidance to begin your search with confidence.</p>
+        <p class="price">$199<span>/month</span></p>
+        <ul>
+          <li>3 Hours of Consulting</li>
+          <li>Email Support</li>
+          <li>Basic Report</li>
+        </ul>
+        <a class="btn" href="{% url 'signup' %}">Get Started</a>
+      </div>
+
+      <div class="package-card super favorite">
+        <p class="package-label">Most popular</p>
+        <h3>Super Package</h3>
+        <p class="package-description">Enjoy more personal support and a deeper understanding of your matches.</p>
+        <p class="price">$399<span>/month</span></p>
+        <ul>
+          <li>5 Hours of Consulting</li>
+          <li>Email and Phone Support</li>
+          <li>Detailed Report</li>
+        </ul>
+        <a class="btn btn-black" href="{% url 'signup' %}">Get Started</a>
+      </div>
+
+      <div class="package-card luxury">
+        <p class="package-label">Personalised care</p>
+        <h3>Luxury Package</h3>
+        <p class="package-description">Make your search easier with comprehensive, hands-on assistance.</p>
+        <p class="price">$599<span>/month</span></p>
+        <ul>
+          <li>8 Hours of Consulting</li>
+          <li>Email, Phone, and Chat Support</li>
+          <li>Detailed Report with Recommendations</li>
+        </ul>
+        <a class="btn" href="{% url 'signup' %}">Get Started</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="{% static 'works/js/plans.js' %}"></script>
+  {% include "main/footer.html" %}
+</body>
+</html>
