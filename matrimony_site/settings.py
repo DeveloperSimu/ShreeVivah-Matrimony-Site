@@ -23,10 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4q2vsueb6i7xn5533t89%!6&05tz_^7s)&6@&vpqc8!7(u*0^d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    "shreevivah-matrimony-site.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 # Application definition
 
